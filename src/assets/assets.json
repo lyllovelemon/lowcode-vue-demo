@@ -1,0 +1,24 @@
+{
+  "version": "0.0.5",
+  "packages": [
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.0.5",
+      "library": "LowcodeMaterialAntVue",
+      "urls": ["/material/index.css", "/material/index.js"]
+    }
+  ],
+  "components": [
+    {
+      "exportName": "LowcodeMaterialAntVueMeta",
+      "url": "/material/meta.js",
+      "package": {
+        "npm": "lowcode-material-ant-vue"
+      }
+    }
+  ],
+  "sort": {
+    "groupList": [],
+    "categoryList": []
+  }
+}

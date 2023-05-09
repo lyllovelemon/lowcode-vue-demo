@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>低代码引擎</title>
+    <link rel="stylesheet" href="/css/editor.css" />
+    <!-- 低代码引擎的页面主题样式，可以替换为 theme-lowcode-dark -->
+    <link href="./package_assets/variables.css" rel="stylesheet" />
+    <link href="./package_assets/next.var.min.css" rel="stylesheet" />
+    <!-- 低代码引擎的页面框架样式 -->
+    <link rel="stylesheet" href="./package_assets/engine-core.css" />
+    <!-- 低代码引擎官方扩展的样式 -->
+    <link rel="stylesheet" href="./package_assets/engine-ext.css" />
+
+    <!-- React & ReactDOM -->
+    <script src="./package_assets/react.production.min.js"></script>
+    <script src="./package_assets/react-dom.production.min.js"></script>
+    <!-- React 向下兼容，预防物料层的依赖 -->
+    <script src="./package_assets/prop-types.js"></script>
+    <!-- lodash，低代码编辑器的依赖 -->
+    <script src="./package_assets/lodash.min.js"></script>
+    <!-- 日期处理包，Fusion Next 的依赖 -->
+    <script src="./package_assets/moment.min.js"></script>
+    <!-- Fusion Next 的主包，低代码编辑器的依赖 -->
+    <script src="./package_assets/next.min.js"></script>
+    <!-- 低代码引擎的主包 -->
+    <script src="./package_assets/engine-core.js"></script>
+    <!-- 低代码引擎官方扩展的主包 -->
+    <script src="./package_assets/engine-ext.js"></script>
+  </head>
+
+  <body>
+    <div id="lce-container"></div>
+    <script type="text/javascript" src="/js/editor.js"></script>
+  </body>
+</html>
