@@ -15,6 +15,8 @@
     "@knxcloud/lowcode-utils": "^1.6.0-beta.5",
     "@knxcloud/lowcode-vue-renderer": "^1.6.0-beta.7",
     "@knxcloud/lowcode-vue-simulator-renderer": "^1.6.0-beta.7",
+    "axios": "^1.4.0",
+    "lodash": "^4.17.21",
     "module": "^1.2.5",
     "vue-router": "^4.1.6"
   },

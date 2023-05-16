@@ -1,20 +1,20 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.9",
   "packages": [
     {
       "package": "lowcode-material-ant-vue",
-      "version": "0.0.6",
+      "version": "0.0.9",
       "library": "LowcodeMaterialAntVue",
       "urls": [
-        "https://unpkg.com\\lowcode-material-ant-vue@0.0.6\\dist\\index.css",
-        "https://unpkg.com\\lowcode-material-ant-vue@0.0.6\\dist\\index.js"
+        "https://unpkg.com\\lowcode-material-ant-vue@0.0.9\\dist\\index.css",
+        "https://unpkg.com\\lowcode-material-ant-vue@0.0.9\\dist\\index.js"
       ]
     }
   ],
   "components": [
     {
       "exportName": "LowcodeMaterialAntVueMeta",
-      "url": "https://unpkg.com\\lowcode-material-ant-vue@0.0.6\\dist\\meta.js",
+      "url": "https://unpkg.com\\lowcode-material-ant-vue@0.0.9\\dist\\meta.js",
       "package": {
         "npm": "lowcode-material-ant-vue"
       }

@@ -1,21 +1,36 @@
 {
   "componentName": "Page",
   "id": "node_dockcviv8fo1",
-  "props": {},
+  "props": {
+    "style": {
+      "height": "100%",
+      "padding": "0",
+      "backgroundColor": "#fff"
+    }
+  },
+  "docId": "doclhk9ucvr",
   "fileName": "/",
   "state": {
-    "text": {
-      "type": "JSExpression",
-      "value": "\"outer\""
-    },
-    "isShowDialog": {
-      "type": "JSExpression",
-      "value": "false"
-    },
-    "info": {
-      "type": "JSExpression",
-      "value": "{\n  \"info\": \"\",\n  \"user\": {\n    \"username\": \"\",\n    \"password\": \"\"\n  }\n}"
-    }
+    "text": "outer",
+    "isShowDialog": false,
+    "searchVal": "",
+    "allList": [
+      {
+        "id": "1",
+        "name": "毛不易",
+        "age": 32,
+        "address": "西湖区湖底公园1号",
+        "tag": "幼鸟指南"
+      },
+      {
+        "id": "2",
+        "name": "邓紫棋",
+        "age": 28,
+        "address": "滨江区网商路699号",
+        "tag": "高音天后"
+      }
+    ],
+    "userList": []
   },
   "dataSource": {
     "list": [
@@ -64,19 +79,43 @@
   },
   "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
   "lifeCycles": {
+    "initModule": {
+      "type": "JSExpression",
+      "value": "(() => {const $id = \"node_dockcviv8fo1\"; return ($cached, $scope = window) => {\n  if ($id in $cached) return $cached[$id];\n  const exports = $cached[$id] = {};\n  const {defineComponent} = $scope[\"Vue\"];\nconst {default: axios} = $scope[\"axios\"];\n  exports.defineComponent = defineComponent;\n  exports.axios = axios;\n  return exports;\n}})()"
+    },
+    "initProps": {
+      "type": "JSExpression",
+      "value": "{\n    style: {\n      type: Object,\n      default: {}\n    },\n  }"
+    },
     "mounted": {
       "type": "JSFunction",
-      "value": "function mounted() {\n  console.log('did mount');\n}"
+      "value": "function () {\n    this.getPostList();\n    this.userList = [...this.allList];\n    console.log('did mount');\n  }"
     },
     "beforeMount": {
       "type": "JSFunction",
-      "value": "function beforeMount() {\n  console.log('will unmount');\n}"
+      "value": "function () {\n    console.log('will unmount');\n  }"
     }
   },
   "methods": {
+    "getPostList": {
+      "type": "JSFunction",
+      "value": "async function (){\n      const url ='http://jsonplaceholder.typicode.com/posts'\n      const res = await axios(url,{\n        method:'GET',\n        mode: 'cors',\n        cache: 'no-cache',\n        credentials: 'same-origin',\n        header:{\n          'Content-Type': 'application/json',\n          \"Referrer-Policy\": \"no-referrer\",\n          \"Access-Control-Allow-Origin\": \"*\",\n          \"Access-Control-Allow-Headers\": \"token, authorization\",\n          \"Access-Control-Allow-Credentials\": \"true\"\n        },\n        redirect: 'follow',//manual,follow,error\n        referrerPolicy: 'no-referrer'\n      })\n      console.log('结果——-->',res);\n    }"
+    },
     "testFunc": {
       "type": "JSFunction",
-      "value": "function testFunc() {\n  console.log('test func');\n}"
+      "value": "function () {\n      console.log('test func');\n    }"
+    },
+    "filterList": {
+      "type": "JSFunction",
+      "value": "function (){\n      if(!this.searchVal) {\n        this.userList = [...this.allList];\n        return;\n      }\n      const origin = [...this.allList];\n      this.userList = origin.filter(item=>{\n        return item.name === this.searchVal;\n      })\n    }"
+    },
+    "onSelectChange": {
+      "type": "JSFunction",
+      "value": "function (val,option){\n      this.searchVal = option.label||'';\n      this.filterList();\n    }"
+    },
+    "expandedRowRender": {
+      "type": "JSFunction",
+      "value": "function (record,index){\n      return `${record.tag}`;\n    }"
     }
   },
   "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
@@ -85,226 +124,250 @@
   "isLocked": false,
   "condition": true,
   "conditionGroup": "",
+  "meta": {
+    "originCode": "import { defineComponent } from 'vue';\nimport axios from \"axios\";\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    text: \"outer\",\n    isShowDialog: false,\n    searchVal:'',\n    allList: [{\n      \"id\": \"1\",\n      \"name\": \"毛不易\",\n      \"age\": 32,\n      \"address\": \"西湖区湖底公园1号\",\n      \"tag\":\"幼鸟指南\"\n    }, {\n        \"id\": \"2\",\n        \"name\": \"邓紫棋\",\n        \"age\": 28,\n        \"address\": \"滨江区网商路699号\",\n        \"tag\":\"高音天后\"\n      }],\n    userList: [],\n  }),\n  methods: {\n    async getPostList(){\n      const url ='http://jsonplaceholder.typicode.com/posts'\n      const res = await axios(url,{\n        method:'GET',\n        mode: 'cors',\n        cache: 'no-cache',\n        credentials: 'same-origin',\n        header:{\n          'Content-Type': 'application/json',\n          \"Referrer-Policy\": \"no-referrer\",\n          \"Access-Control-Allow-Origin\": \"*\",\n          \"Access-Control-Allow-Headers\": \"token, authorization\",\n          \"Access-Control-Allow-Credentials\": \"true\"\n        },\n        redirect: 'follow',//manual,follow,error\n        referrerPolicy: 'no-referrer'\n      })\n      console.log('结果——-->',res);\n    },\n    testFunc() {\n      console.log('test func');\n    },\n    filterList(){\n      if(!this.searchVal) {\n        this.userList = [...this.allList];\n        return;\n      }\n      const origin = [...this.allList];\n      this.userList = origin.filter(item=>{\n        return item.name === this.searchVal;\n      })\n    },\n    onSelectChange(val,option){\n      this.searchVal = option.label||'';\n      this.filterList();\n    },\n    expandedRowRender(record,index){\n      return `${record.tag}`;\n    }\n  },\n  mounted() {\n    this.getPostList();\n    this.userList = [...this.allList];\n    console.log('did mount');\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
+  },
   "children": [
     {
-      "componentName": "NCard",
-      "id": "node_ocl4goj8tm1",
+      "componentName": "ATable",
+      "id": "node_oclhk9ucvr1",
       "props": {
-        "segmented": {
-          "content": false,
-          "footer": false,
-          "action": false
+        "dataSource": {
+          "type": "JSExpression",
+          "value": "this.userList",
+          "mock": [
+            {
+              "id": "1",
+              "name": "毛不易",
+              "age": 32,
+              "address": "西湖区湖底公园1号"
+            },
+            {
+              "id": "2",
+              "name": "邓紫棋",
+              "age": 28,
+              "address": "滨江区网商路699号"
+            }
+          ]
         },
-        "header": {
+        "columns": [
+          {
+            "title": "姓名",
+            "dataIndex": "name",
+            "key": "name"
+          },
+          {
+            "title": "年龄",
+            "dataIndex": "age",
+            "key": "age"
+          },
+          {
+            "title": "地址",
+            "dataIndex": "address",
+            "key": "address"
+          },
+          {
+            "title": "操作",
+            "align": "left",
+            "fixed": "right",
+            "render": {
+              "type": "JSSlot",
+              "params": [
+                "text",
+                "record",
+                "index"
+              ]
+            }
+          }
+        ],
+        "rowKey": "id",
+        "pagination": {
+          "pageSize": 5,
+          "total": {
+            "type": "JSExpression",
+            "value": "this.userList.length",
+            "mock": 15
+          },
+          "current": 1,
+          "showSizeChanger": false,
+          "showQuickJumper": false,
+          "simple": false,
+          "size": "default"
+        },
+        "loading": false,
+        "showHeader": true,
+        "size": "default",
+        "tableLayout": "",
+        "scroll": {
+          "scrollToFirstRowOnChange": true
+        },
+        "title": {
           "type": "JSSlot",
+          "params": [
+            "currentPageData"
+          ],
           "value": [
             {
-              "componentName": "NText",
-              "id": "node_ocl4goj8tm3",
+              "componentName": "ASelect",
+              "id": "node_oclhk9ucvr6",
               "props": {
-                "children": "用户登录",
-                "type": "default",
-                "tag": "span"
+                "style": {
+                  "width": "200px",
+                  "marginRight": "10px"
+                },
+                "options": [
+                  {
+                    "label": "毛不易",
+                    "value": "1"
+                  },
+                  {
+                    "label": "邓紫棋",
+                    "value": "2"
+                  },
+                  {
+                    "label": "随机",
+                    "value": "3"
+                  }
+                ],
+                "bordered": true,
+                "allowClear": true,
+                "autoFocus": false,
+                "labelInValue": false,
+                "autoClearSearchValue": true,
+                "showSearch": false,
+                "open": {
+                  "type": "JSExpression",
+                  "value": "",
+                  "mock": false
+                },
+                "defaultOpen": false,
+                "tokenSeparators": [],
+                "": "value",
+                "maxTagCount": 0,
+                "maxTagTextLength": 0,
+                "value": {
+                  "type": "JSExpression",
+                  "value": "this.searchVal"
+                },
+                "_unsafe_MixedSetter_value_select": "ExpressionSetter",
+                "__events": {
+                  "eventDataList": [
+                    {
+                      "type": "componentEvent",
+                      "name": "onChange",
+                      "relatedEventName": "onSelectChange"
+                    }
+                  ],
+                  "eventList": [
+                    {
+                      "name": "onBlur",
+                      "template": "onBlur(${extParams}){\n//失焦回调\n console.log('onBlur')}",
+                      "disabled": false
+                    },
+                    {
+                      "name": "onChange",
+                      "template": "onChange(value,option){\n console.log('onChange',value,option)}",
+                      "disabled": true
+                    },
+                    {
+                      "name": "onDeselect",
+                      "template": "onDeselect(value,option){\n console.log('onDeselect',value,option)}",
+                      "disabled": false
+                    },
+                    {
+                      "name": "onFocus",
+                      "template": "onFocus(${extParams}){\n//聚焦回调\n console.log('onFocus')}",
+                      "disabled": false
+                    }
+                  ]
+                },
+                "onChange": {
+                  "type": "JSFunction",
+                  "value": "function(){return this.onSelectChange.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+                }
               },
+              "docId": "doclhk9ucvr",
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            },
+            {
+              "componentName": "ATreeSelect",
+              "id": "node_oclhkb2w45j",
+              "props": {
+                "treeData": [
+                  {
+                    "title": "parent 0",
+                    "value": "0-0",
+                    "children": [
+                      {
+                        "title": "leaf 0-0",
+                        "value": "0-0-0",
+                        "isLeaf": true
+                      },
+                      {
+                        "title": "leaf 0-1",
+                        "value": "0-0-1",
+                        "isLeaf": true
+                      }
+                    ]
+                  },
+                  {
+                    "title": "parent 1",
+                    "value": "0-1",
+                    "children": [
+                      {
+                        "title": "leaf 1-0",
+                        "value": "0-1-0",
+                        "isLeaf": true
+                      },
+                      {
+                        "title": "leaf 1-1",
+                        "value": "0-1-1",
+                        "isLeaf": true
+                      }
+                    ]
+                  }
+                ],
+                "treeDefaultExpandAll": true,
+                "placeholder": "请选择",
+                "style": {
+                  "width": "300px"
+                },
+                "allowClear": false,
+                "autoClearSearchValue": true,
+                "bordered": true,
+                "disabled": false,
+                "labelInValue": true,
+                "multiple": false,
+                "showCheckedStrategy": "SHOW_ALL",
+                "treeCheckable": false,
+                "virtual": true
+              },
+              "docId": "doclhkb2w45",
               "hidden": false,
               "title": "",
               "isLocked": false,
               "condition": true,
               "conditionGroup": ""
             }
-          ],
-          "title": "头部"
-        }
+          ]
+        },
+        "expandedRowRender": {
+          "type": "JSFunction",
+          "value": "function(){ return this.expandedRowRender.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+        },
+        "defaultExpandAllRows": false,
+        "_unsafe_MixedSetter_expandedRowRender_select": "FunctionSetter"
       },
+      "docId": "doclhk9ucvr",
       "hidden": false,
       "title": "",
       "isLocked": false,
       "condition": true,
-      "conditionGroup": "",
-      "children": [
-        {
-          "componentName": "NForm",
-          "id": "node_ocl4gmvfwx1",
-          "props": {
-            "label-width": 80,
-            "label-align": "left",
-            "label-placement": "left",
-            "require-mark-placement": "right",
-            "__events": {
-              "eventDataList": [
-                {
-                  "type": "componentEvent",
-                  "name": "onSubmit",
-                  "relatedEventName": "onSubmit"
-                }
-              ],
-              "eventList": [
-                {
-                  "name": "onSubmit",
-                  "disabled": true
-                }
-              ]
-            },
-            "onSubmit": {
-              "type": "JSFunction",
-              "value": "function(){this.onSubmit.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
-            },
-            "model": {
-              "type": "JSExpression",
-              "value": "this.info.user",
-              "mock": {
-                "type": "JSExpression",
-                "value": "this.info.user"
-              }
-            }
-          },
-          "hidden": false,
-          "title": "",
-          "isLocked": false,
-          "condition": true,
-          "conditionGroup": "",
-          "children": [
-            {
-              "componentName": "NFormItem",
-              "id": "node_ocl4i3antp2",
-              "props": {
-                "label": "用户名",
-                "path": "username",
-                "size": "medium",
-                "show-label": true,
-                "label-align": "left",
-                "label-placement": "left",
-                "require-mark-placement": "right",
-                "rule": {
-                  "type": "string",
-                  "required": true,
-                  "trigger": ["input", "blur"],
-                  "message": "请输入用户名"
-                },
-                "label-width": "auto"
-              },
-              "hidden": false,
-              "title": "",
-              "isLocked": false,
-              "condition": true,
-              "conditionGroup": "",
-              "children": [
-                {
-                  "componentName": "NInput",
-                  "id": "node_ocl4i3antp3",
-                  "props": {
-                    "placeholder": "请输入用户名",
-                    "v-model:value": {
-                      "type": "JSExpression",
-                      "value": "this.info.user.username"
-                    },
-                    "show-password-on": "click"
-                  },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                }
-              ]
-            },
-            {
-              "componentName": "NFormItem",
-              "id": "node_ocl4i3antp4",
-              "props": {
-                "label": "密码",
-                "path": "password",
-                "size": "medium",
-                "show-label": true,
-                "label-align": "left",
-                "label-placement": "left",
-                "require-mark-placement": "right",
-                "rule": {
-                  "type": "string",
-                  "required": true,
-                  "trigger": ["input", "blur"],
-                  "message": "请输入密码"
-                }
-              },
-              "hidden": false,
-              "title": "",
-              "isLocked": false,
-              "condition": true,
-              "conditionGroup": "",
-              "children": [
-                {
-                  "componentName": "NInput",
-                  "id": "node_ocl4i3antp5",
-                  "props": {
-                    "placeholder": "请输入密码",
-                    "v-model:value": {
-                      "type": "JSExpression",
-                      "value": "this.info.user.password"
-                    },
-                    "type": "password",
-                    "show-password-on": "click"
-                  },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                }
-              ]
-            },
-            {
-              "componentName": "NSpace",
-              "id": "node_ocl4goj8tm4",
-              "props": {
-                "align": "start",
-                "justify": "center",
-                "size": "medium"
-              },
-              "hidden": false,
-              "title": "",
-              "isLocked": false,
-              "condition": true,
-              "conditionGroup": "",
-              "children": [
-                {
-                  "componentName": "NButton",
-                  "id": "node_ocl4goj8tm6",
-                  "props": {
-                    "children": "登录",
-                    "icon-placement": "left",
-                    "attr-type": "submit",
-                    "type": "primary",
-                    "size": "medium",
-                    "bordered": true
-                  },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                },
-                {
-                  "componentName": "NButton",
-                  "id": "node_ocl4goj8tm5",
-                  "props": {
-                    "children": "重置",
-                    "icon-placement": "left",
-                    "attr-type": "button",
-                    "type": "default",
-                    "size": "medium",
-                    "bordered": true
-                  },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "conditionGroup": ""
     }
   ]
 }

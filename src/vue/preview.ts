@@ -2,6 +2,7 @@ import { Asset } from '@alilc/lowcode-types';
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
 import { buildComponents, AssetLoader } from '@knxcloud/lowcode-utils';
 import { h, createApp, toRaw, Suspense } from 'vue';
+import {createAxiosHandler} from '../handler/datasource-axios-handler';
 
 const init = async () => {
   // 获取保存在本地的项目需要的包packages
@@ -19,7 +20,9 @@ const init = async () => {
   console.log('componentsMap====', componentsMap);
   const libraryMap = {}; // 创建库的Map
   const libraryAsset: Asset = []; // 相关第三方包的资源数组
+  // @ts-ignore
   packages.forEach(({ package: _package, library, urls, renderUrls }) => {
+    // @ts-ignore
     libraryMap[_package] = library;
     if (renderUrls) {
       libraryAsset.push(renderUrls);
@@ -38,6 +41,11 @@ const init = async () => {
 (async () => {
   const { schema, components } = await init();
   console.log('VueRenderer===', VueRenderer);
+  const appHelper = {
+    requestHandlersMap:{
+      fetch:createAxiosHandler()
+    }
+  }
   const app = createApp(() => {
     return h('div', { class: 'lowcode-plugin-sample-preview' }, [
       h(Suspense, null, {
@@ -46,6 +54,7 @@ const init = async () => {
             class: 'lowcode-plugin-sample-preview-content',
             schema: toRaw(schema),
             components: toRaw(components),
+            appHelper
           }),
         fallback: () =>
           h('div', { class: 'lowcode-plugin-sample-preview-loading' }, 'loading...'),

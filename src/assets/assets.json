@@ -1,11 +1,19 @@
 {
-  "version": "0.0.5",
+  "version": "0.0.9",
   "packages": [
     {
       "package": "lowcode-material-ant-vue",
-      "version": "0.0.5",
+      "version": "0.0.9",
       "library": "LowcodeMaterialAntVue",
       "urls": ["/material/index.css", "/material/index.js"]
+    },
+    {
+      "package": "axios",
+      "version": "1.4.0",
+      "urls": [
+        "https://unpkg.com/axios@1.4.0/dist/axios.min.js"
+      ],
+      "library": "axios"
     }
   ],
   "components": [
@@ -20,5 +28,13 @@
   "sort": {
     "groupList": [],
     "categoryList": []
-  }
+  },
+  "utils": [
+    {
+      "name": "axios",
+      "npm": {
+        "package": "axios"
+      }
+    }
+  ]
 }
