@@ -5,15 +5,17 @@
     "style": {
       "height": "100%",
       "padding": "0",
-      "backgroundColor": "#fff"
+      "backgroundColor": "#fff",
+      "paddingTop": "10px"
     }
   },
   "docId": "doclhk9ucvr",
   "fileName": "/",
   "state": {
     "text": "outer",
-    "isShowDialog": false,
+    "showDetail": false,
     "searchVal": "",
+    "currentRow": {},
     "allList": [
       {
         "id": "1",
@@ -81,7 +83,7 @@
   "lifeCycles": {
     "initModule": {
       "type": "JSExpression",
-      "value": "(() => {const $id = \"node_dockcviv8fo1\"; return ($cached, $scope = window) => {\n  if ($id in $cached) return $cached[$id];\n  const exports = $cached[$id] = {};\n  const {defineComponent} = $scope[\"Vue\"];\nconst {default: axios} = $scope[\"axios\"];\n  exports.defineComponent = defineComponent;\n  exports.axios = axios;\n  return exports;\n}})()"
+      "value": "(() => {const $id = \"node_dockcviv8fo1\"; return ($cached, $scope = window) => {\n  if ($id in $cached) return $cached[$id];\n  const exports = $cached[$id] = {};\n  const {defineComponent,toRaw} = $scope[\"Vue\"];\n  exports.defineComponent = defineComponent;\n  exports.toRaw = toRaw;\n  return exports;\n}})()"
     },
     "initProps": {
       "type": "JSExpression",
@@ -89,7 +91,7 @@
     },
     "mounted": {
       "type": "JSFunction",
-      "value": "function () {\n    this.getPostList();\n    this.userList = [...this.allList];\n    console.log('did mount');\n  }"
+      "value": "function () {\n    this.userList = [...this.allList];\n    console.log('did mount');\n  }"
     },
     "beforeMount": {
       "type": "JSFunction",
@@ -97,9 +99,13 @@
     }
   },
   "methods": {
-    "getPostList": {
+    "onDetail": {
       "type": "JSFunction",
-      "value": "async function (){\n      const url ='http://jsonplaceholder.typicode.com/posts'\n      const res = await axios(url,{\n        method:'GET',\n        mode: 'cors',\n        cache: 'no-cache',\n        credentials: 'same-origin',\n        header:{\n          'Content-Type': 'application/json',\n          \"Referrer-Policy\": \"no-referrer\",\n          \"Access-Control-Allow-Origin\": \"*\",\n          \"Access-Control-Allow-Headers\": \"token, authorization\",\n          \"Access-Control-Allow-Credentials\": \"true\"\n        },\n        redirect: 'follow',//manual,follow,error\n        referrerPolicy: 'no-referrer'\n      })\n      console.log('结果——-->',res);\n    }"
+      "value": "function (e,data){\n      this.currentRow = toRaw(data.data);\n      this.showDetail = true;\n      console.log('打开详情data',data, toRaw(this.currentRow),this.showDetail);\n    }"
+    },
+    "onCloseDetail": {
+      "type": "JSFunction",
+      "value": "function (){\n      this.showDetail = false;\n    }"
     },
     "testFunc": {
       "type": "JSFunction",
@@ -111,11 +117,15 @@
     },
     "onSelectChange": {
       "type": "JSFunction",
-      "value": "function (val,option){\n      this.searchVal = option.label||'';\n      this.filterList();\n    }"
+      "value": "function (val,option){\n      this.searchVal = option.label?option.label:'';\n      this.filterList();\n    }"
+    },
+    "onDeselect": {
+      "type": "JSFunction",
+      "value": "function (e){\n      console.log('取消选中',e);\n    }"
     },
     "expandedRowRender": {
       "type": "JSFunction",
-      "value": "function (record,index){\n      return `${record.tag}`;\n    }"
+      "value": "function (record,index){\n      console.log('record',record);\n      return `${record.tag}`;\n    }"
     }
   },
   "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
@@ -125,7 +135,7 @@
   "condition": true,
   "conditionGroup": "",
   "meta": {
-    "originCode": "import { defineComponent } from 'vue';\nimport axios from \"axios\";\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    text: \"outer\",\n    isShowDialog: false,\n    searchVal:'',\n    allList: [{\n      \"id\": \"1\",\n      \"name\": \"毛不易\",\n      \"age\": 32,\n      \"address\": \"西湖区湖底公园1号\",\n      \"tag\":\"幼鸟指南\"\n    }, {\n        \"id\": \"2\",\n        \"name\": \"邓紫棋\",\n        \"age\": 28,\n        \"address\": \"滨江区网商路699号\",\n        \"tag\":\"高音天后\"\n      }],\n    userList: [],\n  }),\n  methods: {\n    async getPostList(){\n      const url ='http://jsonplaceholder.typicode.com/posts'\n      const res = await axios(url,{\n        method:'GET',\n        mode: 'cors',\n        cache: 'no-cache',\n        credentials: 'same-origin',\n        header:{\n          'Content-Type': 'application/json',\n          \"Referrer-Policy\": \"no-referrer\",\n          \"Access-Control-Allow-Origin\": \"*\",\n          \"Access-Control-Allow-Headers\": \"token, authorization\",\n          \"Access-Control-Allow-Credentials\": \"true\"\n        },\n        redirect: 'follow',//manual,follow,error\n        referrerPolicy: 'no-referrer'\n      })\n      console.log('结果——-->',res);\n    },\n    testFunc() {\n      console.log('test func');\n    },\n    filterList(){\n      if(!this.searchVal) {\n        this.userList = [...this.allList];\n        return;\n      }\n      const origin = [...this.allList];\n      this.userList = origin.filter(item=>{\n        return item.name === this.searchVal;\n      })\n    },\n    onSelectChange(val,option){\n      this.searchVal = option.label||'';\n      this.filterList();\n    },\n    expandedRowRender(record,index){\n      return `${record.tag}`;\n    }\n  },\n  mounted() {\n    this.getPostList();\n    this.userList = [...this.allList];\n    console.log('did mount');\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
+    "originCode": "import { defineComponent,toRaw } from 'vue';\n\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    text: \"outer\",\n    showDetail: false,\n    searchVal:'',\n    currentRow:{},\n    allList: [{\n      \"id\": \"1\",\n      \"name\": \"毛不易\",\n      \"age\": 32,\n      \"address\": \"西湖区湖底公园1号\",\n      \"tag\":\"幼鸟指南\"\n    }, {\n        \"id\": \"2\",\n        \"name\": \"邓紫棋\",\n        \"age\": 28,\n        \"address\": \"滨江区网商路699号\",\n        \"tag\":\"高音天后\"\n      }],\n    userList: [],\n  }),\n  methods: {\n    onDetail(e,data){\n      this.currentRow = toRaw(data.data);\n      this.showDetail = true;\n      console.log('打开详情data',data, toRaw(this.currentRow),this.showDetail);\n    },\n    onCloseDetail(){\n      this.showDetail = false;\n    },\n    testFunc() {\n      console.log('test func');\n    },\n    filterList(){\n      if(!this.searchVal) {\n        this.userList = [...this.allList];\n        return;\n      }\n      const origin = [...this.allList];\n      this.userList = origin.filter(item=>{\n        return item.name === this.searchVal;\n      })\n    },\n    onSelectChange(val,option){\n      this.searchVal = option.label?option.label:'';\n      this.filterList();\n    },\n    onDeselect(e){\n      console.log('取消选中',e);\n    },\n    expandedRowRender(record,index){\n      console.log('record',record);\n      return `${record.tag}`;\n    }\n  },\n  mounted() {\n    this.userList = [...this.allList];\n    console.log('did mount');\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
   },
   "children": [
     {
@@ -170,13 +180,71 @@
             "title": "操作",
             "align": "left",
             "fixed": "right",
+            "ellipsis": false,
+            "filterSearch": false,
+            "filterMultiple": true,
+            "filterMode": "menu",
             "render": {
               "type": "JSSlot",
               "params": [
-                "text",
-                "record",
-                "index"
-              ]
+                "data"
+              ],
+              "id": "node_oclhpy05zi1"
+            },
+            "customRender": {
+              "type": "JSSlot",
+              "params": [
+                "data"
+              ],
+              "value": [
+                {
+                  "componentName": "AButton",
+                  "id": "node_oclhq0dhj72",
+                  "props": {
+                    "type": "text",
+                    "children": "详情",
+                    "htmlType": "button",
+                    "size": "middle",
+                    "shape": "default",
+                    "block": false,
+                    "danger": false,
+                    "ghost": false,
+                    "disabled": false,
+                    "__events": {
+                      "eventDataList": [
+                        {
+                          "type": "componentEvent",
+                          "name": "onClick",
+                          "relatedEventName": "onDetail",
+                          "paramStr": "{\n \t \"data\":this.data.record\n}"
+                        }
+                      ],
+                      "eventList": [
+                        {
+                          "name": "onClick",
+                          "template": "onClick(event,${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
+                          "disabled": true
+                        }
+                      ]
+                    },
+                    "onClick": {
+                      "type": "JSFunction",
+                      "value": "function(){return this.onDetail.apply(this,Array.prototype.slice.call(arguments).concat([{\n \t \"data\":this.data.record\n}])) }"
+                    }
+                  },
+                  "docId": "doclhq0dhj7",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": "",
+                  "loopArgs": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "id": "node_oclhq0dhj71"
             }
           }
         ],
@@ -234,7 +302,7 @@
                 "autoFocus": false,
                 "labelInValue": false,
                 "autoClearSearchValue": true,
-                "showSearch": false,
+                "showSearch": true,
                 "open": {
                   "type": "JSExpression",
                   "value": "",
@@ -256,6 +324,11 @@
                       "type": "componentEvent",
                       "name": "onChange",
                       "relatedEventName": "onSelectChange"
+                    },
+                    {
+                      "type": "componentEvent",
+                      "name": "onDeselect",
+                      "relatedEventName": "onDeselect"
                     }
                   ],
                   "eventList": [
@@ -272,7 +345,7 @@
                     {
                       "name": "onDeselect",
                       "template": "onDeselect(value,option){\n console.log('onDeselect',value,option)}",
-                      "disabled": false
+                      "disabled": true
                     },
                     {
                       "name": "onFocus",
@@ -284,6 +357,11 @@
                 "onChange": {
                   "type": "JSFunction",
                   "value": "function(){return this.onSelectChange.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+                },
+                "showArrow": false,
+                "onDeselect": {
+                  "type": "JSFunction",
+                  "value": "function(){return this.onDeselect.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
                 }
               },
               "docId": "doclhk9ucvr",
@@ -294,59 +372,261 @@
               "conditionGroup": ""
             },
             {
-              "componentName": "ATreeSelect",
-              "id": "node_oclhkb2w45j",
+              "componentName": "AButton",
+              "id": "node_oclhq3h6jjb",
               "props": {
-                "treeData": [
-                  {
-                    "title": "parent 0",
-                    "value": "0-0",
-                    "children": [
-                      {
-                        "title": "leaf 0-0",
-                        "value": "0-0-0",
-                        "isLeaf": true
-                      },
-                      {
-                        "title": "leaf 0-1",
-                        "value": "0-0-1",
-                        "isLeaf": true
-                      }
-                    ]
-                  },
-                  {
-                    "title": "parent 1",
-                    "value": "0-1",
-                    "children": [
-                      {
-                        "title": "leaf 1-0",
-                        "value": "0-1-0",
-                        "isLeaf": true
-                      },
-                      {
-                        "title": "leaf 1-1",
-                        "value": "0-1-1",
-                        "isLeaf": true
-                      }
-                    ]
-                  }
-                ],
-                "treeDefaultExpandAll": true,
-                "placeholder": "请选择",
-                "style": {
-                  "width": "300px"
-                },
-                "allowClear": false,
-                "autoClearSearchValue": true,
-                "bordered": true,
+                "type": "primary",
+                "children": "新增",
+                "htmlType": "button",
+                "size": "middle",
+                "shape": "default",
+                "block": false,
+                "danger": false,
+                "ghost": false,
                 "disabled": false,
-                "labelInValue": true,
-                "multiple": false,
-                "showCheckedStrategy": "SHOW_ALL",
-                "treeCheckable": false,
-                "virtual": true
+                "style": {
+                  "marginLeft": "10px"
+                }
               },
-              "docId": "doclhkb2w45",
+              "docId": "doclhq3h6jj",
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            }
+          ],
+          "id": "node_oclhpqfec52"
+        },
+        "expandedRowRender": {
+          "type": "JSSlot",
+          "params": [
+            "data"
+          ],
+          "value": [
+            {
+              "componentName": "ATag",
+              "id": "node_oclhpwmvlx4",
+              "props": {
+                "color": "orange",
+                "children": {
+                  "type": "JSExpression",
+                  "value": "'标签:'+this.data.record.tag",
+                  "mock": "标签"
+                },
+                "closable": true,
+                "closeIcon": "",
+                "visible": true,
+                "icon": "",
+                "style": {}
+              },
+              "docId": "doclhq0dhj7",
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            }
+          ],
+          "id": "node_oclhpwmvlx3"
+        },
+        "defaultExpandAllRows": true,
+        "_unsafe_MixedSetter_expandedRowRender_select": "SlotSetter"
+      },
+      "docId": "doclhk9ucvr",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": "",
+      "loopArgs": [
+        "",
+        ""
+      ]
+    },
+    {
+      "componentName": "AModal",
+      "id": "node_oclhq0dhj74",
+      "props": {
+        "title": "详情",
+        "okText": "确认",
+        "cancelText": "取消",
+        "open": true,
+        "destroyOnClose": true,
+        "visible": {
+          "type": "JSExpression",
+          "value": "this.showDetail",
+          "mock": false
+        },
+        "centered": true,
+        "closable": true,
+        "confirmLoading": false,
+        "forceRender": false,
+        "keyboard": true,
+        "mask": true,
+        "maskClosable": true,
+        "okType": "primary",
+        "bodyStyle": {},
+        "maskStyle": {},
+        "__events": {
+          "eventDataList": [
+            {
+              "type": "componentEvent",
+              "name": "onCancel",
+              "relatedEventName": "onCloseDetail"
+            }
+          ],
+          "eventList": [
+            {
+              "name": "onCancel",
+              "disabled": true
+            },
+            {
+              "name": "onOk",
+              "disabled": false
+            }
+          ]
+        },
+        "onCancel": {
+          "type": "JSFunction",
+          "value": "function(){return this.onCloseDetail.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+        },
+        "_unsafe_MixedSetter_title_select": "StringSetter",
+        "footer": "",
+        "okButtonProps": {
+          "disabled": true
+        },
+        "_unsafe_MixedSetter_footer_select": "SlotSetter",
+        "dialogStyle": {}
+      },
+      "docId": "doclhq0dhj7",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": "",
+      "children": [
+        {
+          "componentName": "ADescriptions",
+          "id": "node_oclhq67uk61",
+          "props": {
+            "title": "用户信息",
+            "items": [
+              {
+                "key": "426f",
+                "label": "姓名",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.name"
+                }
+              },
+              {
+                "key": "4m3g",
+                "label": "年龄",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.age"
+                }
+              },
+              {
+                "key": "bxk1",
+                "label": "地址",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.address"
+                }
+              },
+              {
+                "key": "5fk3",
+                "label": "标签",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.tag"
+                }
+              }
+            ],
+            "bordered": true,
+            "column": 2,
+            "size": "default",
+            "layout": "horizontal",
+            "colon": true
+          },
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": "",
+          "children": [
+            {
+              "componentName": "Descriptions.Item",
+              "id": "node_oclhq67uk63",
+              "props": {
+                "key": "426f",
+                "label": "姓名",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.name"
+                }
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            },
+            {
+              "componentName": "Descriptions.Item",
+              "id": "node_oclhq67uk6g",
+              "props": {
+                "key": "4m3g",
+                "label": "年龄",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.age"
+                }
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            },
+            {
+              "componentName": "Descriptions.Item",
+              "id": "node_oclhq67uk68",
+              "props": {
+                "key": "bxk1",
+                "label": "地址",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.address"
+                }
+              },
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            },
+            {
+              "componentName": "Descriptions.Item",
+              "id": "node_oclhq67uk6c",
+              "props": {
+                "key": "5fk3",
+                "label": "标签",
+                "span": 1,
+                "children": {
+                  "type": "JSExpression",
+                  "value": "this.currentRow.tag"
+                }
+              },
               "hidden": false,
               "title": "",
               "isLocked": false,
@@ -354,20 +634,8 @@
               "conditionGroup": ""
             }
           ]
-        },
-        "expandedRowRender": {
-          "type": "JSFunction",
-          "value": "function(){ return this.expandedRowRender.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
-        },
-        "defaultExpandAllRows": false,
-        "_unsafe_MixedSetter_expandedRowRender_select": "FunctionSetter"
-      },
-      "docId": "doclhk9ucvr",
-      "hidden": false,
-      "title": "",
-      "isLocked": false,
-      "condition": true,
-      "conditionGroup": ""
+        }
+      ]
     }
   ]
 }
