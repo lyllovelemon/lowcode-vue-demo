@@ -12,6 +12,7 @@
     "@alilc/lowcode-editor-skeleton": "var window.AliLowCodeEngine.common.skeletonCabin",
     "@knxcloud/lowcode-vue-renderer": "var window.LCVueRenderer",
     "@knxcloud/lowcode-vue-simulator-renderer": "var window.LCVueSimulatorRenderer",
+    "lowcode-material-ant-vue": "var window.antVue",
     "lodash": "var window._",
     "moment": "var window.moment",
     "prop-types": "var window.PropTypes",

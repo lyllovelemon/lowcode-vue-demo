@@ -1690,7 +1690,9 @@ __webpack_require__.d(__webpack_exports__, {
   "ATypographyParagraph": function() { return /* reexport */ typography_Paragraph; },
   "ATypographyText": function() { return /* reexport */ typography_Text; },
   "ATypographyTitle": function() { return /* reexport */ typography_Title; },
-  "AUpload": function() { return /* reexport */ es_upload; }
+  "AUpload": function() { return /* reexport */ es_upload; },
+  "message": function() { return /* reexport */ message; },
+  "notification": function() { return /* reexport */ notification; }
 });
 
 ;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/style/default.less
@@ -31900,7 +31902,6 @@ var cascader_Cascader = (0,external_Vue_namespaceObject.defineComponent)({
 });
 /* harmony default export */ var cascader = (withInstall(cascader_Cascader));
 ;// CONCATENATED MODULE: ./src/lowcode/cascader/index.ts
-/* eslint-disable */
 
 
 ;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/checkbox/style/index.less
@@ -63270,6 +63271,173 @@ Input.install = function (app) {
 
 
 
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/ItemMeta.js
+
+
+
+
+var listItemMetaProps = function listItemMetaProps() {
+  return {
+    avatar: vue_types.any,
+    description: vue_types.any,
+    prefixCls: String,
+    title: vue_types.any
+  };
+};
+/* harmony default export */ var ItemMeta = ((0,external_Vue_namespaceObject.defineComponent)({
+  compatConfig: {
+    MODE: 3
+  },
+  name: 'AListItemMeta',
+  props: listItemMetaProps(),
+  displayName: 'AListItemMeta',
+  __ANT_LIST_ITEM_META: true,
+  slots: ['avatar', 'description', 'title'],
+  setup: function setup(props, _ref) {
+    var slots = _ref.slots;
+    var _useConfigInject = useConfigInject('list', props),
+      prefixCls = _useConfigInject.prefixCls;
+    return function () {
+      var _props$title, _slots$title, _props$description, _slots$description, _props$avatar, _slots$avatar;
+      var classString = "".concat(prefixCls.value, "-item-meta");
+      var title = (_props$title = props.title) !== null && _props$title !== void 0 ? _props$title : (_slots$title = slots.title) === null || _slots$title === void 0 ? void 0 : _slots$title.call(slots);
+      var description = (_props$description = props.description) !== null && _props$description !== void 0 ? _props$description : (_slots$description = slots.description) === null || _slots$description === void 0 ? void 0 : _slots$description.call(slots);
+      var avatar = (_props$avatar = props.avatar) !== null && _props$avatar !== void 0 ? _props$avatar : (_slots$avatar = slots.avatar) === null || _slots$avatar === void 0 ? void 0 : _slots$avatar.call(slots);
+      var content = (0,external_Vue_namespaceObject.createVNode)("div", {
+        "class": "".concat(prefixCls.value, "-item-meta-content")
+      }, [title && (0,external_Vue_namespaceObject.createVNode)("h4", {
+        "class": "".concat(prefixCls.value, "-item-meta-title")
+      }, [title]), description && (0,external_Vue_namespaceObject.createVNode)("div", {
+        "class": "".concat(prefixCls.value, "-item-meta-description")
+      }, [description])]);
+      return (0,external_Vue_namespaceObject.createVNode)("div", {
+        "class": classString
+      }, [avatar && (0,external_Vue_namespaceObject.createVNode)("div", {
+        "class": "".concat(prefixCls.value, "-item-meta-avatar")
+      }, [avatar]), (title || description) && content]);
+    };
+  }
+}));
+;// CONCATENATED MODULE: ./src/lowcode/list-item-meta/index.ts
+
+
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/contextKey.js
+var ListContextKey = Symbol('ListContextKey');
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/Item.js
+
+
+
+var list_Item_excluded = ["class"];
+
+
+
+
+
+
+
+
+
+
+var listItemProps = function listItemProps() {
+  return {
+    prefixCls: String,
+    extra: vue_types.any,
+    actions: vue_types.array,
+    grid: Object,
+    colStyle: {
+      type: Object,
+      default: undefined
+    }
+  };
+};
+/* harmony default export */ var list_Item = ((0,external_Vue_namespaceObject.defineComponent)({
+  compatConfig: {
+    MODE: 3
+  },
+  name: 'AListItem',
+  inheritAttrs: false,
+  Meta: ItemMeta,
+  props: listItemProps(),
+  slots: ['actions', 'extra'],
+  setup: function setup(props, _ref) {
+    var slots = _ref.slots,
+      attrs = _ref.attrs;
+    var _inject = (0,external_Vue_namespaceObject.inject)(ListContextKey, {
+        grid: (0,external_Vue_namespaceObject.ref)(),
+        itemLayout: (0,external_Vue_namespaceObject.ref)()
+      }),
+      itemLayout = _inject.itemLayout,
+      grid = _inject.grid;
+    var _useConfigInject = useConfigInject('list', props),
+      prefixCls = _useConfigInject.prefixCls;
+    var isItemContainsTextNodeAndNotSingular = function isItemContainsTextNodeAndNotSingular() {
+      var _slots$default;
+      var children = ((_slots$default = slots.default) === null || _slots$default === void 0 ? void 0 : _slots$default.call(slots)) || [];
+      var result;
+      children.forEach(function (element) {
+        if (isStringElement(element) && !isEmptyElement(element)) {
+          result = true;
+        }
+      });
+      return result && children.length > 1;
+    };
+    var isFlexMode = function isFlexMode() {
+      var _props$extra, _slots$extra;
+      var extra = (_props$extra = props.extra) !== null && _props$extra !== void 0 ? _props$extra : (_slots$extra = slots.extra) === null || _slots$extra === void 0 ? void 0 : _slots$extra.call(slots);
+      if (itemLayout.value === 'vertical') {
+        return !!extra;
+      }
+      return !isItemContainsTextNodeAndNotSingular();
+    };
+    return function () {
+      var _props$extra2, _slots$extra2, _slots$default2, _props$actions, _slots$actions;
+      var className = attrs.class,
+        restAttrs = objectWithoutProperties_objectWithoutProperties(attrs, list_Item_excluded);
+      var pre = prefixCls.value;
+      var extra = (_props$extra2 = props.extra) !== null && _props$extra2 !== void 0 ? _props$extra2 : (_slots$extra2 = slots.extra) === null || _slots$extra2 === void 0 ? void 0 : _slots$extra2.call(slots);
+      var children = (_slots$default2 = slots.default) === null || _slots$default2 === void 0 ? void 0 : _slots$default2.call(slots);
+      var actions = (_props$actions = props.actions) !== null && _props$actions !== void 0 ? _props$actions : flattenChildren((_slots$actions = slots.actions) === null || _slots$actions === void 0 ? void 0 : _slots$actions.call(slots));
+      actions = actions && !Array.isArray(actions) ? [actions] : actions;
+      var actionsContent = actions && actions.length > 0 && (0,external_Vue_namespaceObject.createVNode)("ul", {
+        "class": "".concat(pre, "-item-action"),
+        "key": "actions"
+      }, [actions.map(function (action, i) {
+        return (0,external_Vue_namespaceObject.createVNode)("li", {
+          "key": "".concat(pre, "-item-action-").concat(i)
+        }, [action, i !== actions.length - 1 && (0,external_Vue_namespaceObject.createVNode)("em", {
+          "class": "".concat(pre, "-item-action-split")
+        }, null)]);
+      })]);
+      var Element = grid.value ? 'div' : 'li';
+      var itemChildren = (0,external_Vue_namespaceObject.createVNode)(Element, objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, restAttrs), {}, {
+        "class": _util_classNames("".concat(pre, "-item"), defineProperty_defineProperty({}, "".concat(pre, "-item-no-flex"), !isFlexMode()), className)
+      }), {
+        default: function _default() {
+          return [itemLayout.value === 'vertical' && extra ? [(0,external_Vue_namespaceObject.createVNode)("div", {
+            "class": "".concat(pre, "-item-main"),
+            "key": "content"
+          }, [children, actionsContent]), (0,external_Vue_namespaceObject.createVNode)("div", {
+            "class": "".concat(pre, "-item-extra"),
+            "key": "extra"
+          }, [extra])] : [children, actionsContent, cloneElement(extra, {
+            key: 'extra'
+          })]];
+        }
+      });
+      return grid.value ? (0,external_Vue_namespaceObject.createVNode)(Col, {
+        "flex": 1,
+        "style": props.colStyle
+      }, {
+        default: function _default() {
+          return [itemChildren];
+        }
+      }) : itemChildren;
+    };
+  }
+}));
+;// CONCATENATED MODULE: ./src/lowcode/list-item/index.ts
+
+
 ;// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/DoubleLeftOutlined.js
 // This icon file is generated automatically.
 var DoubleLeftOutlined = {
@@ -64494,167 +64662,6 @@ var paginationConfig = function paginationConfig() {
 
 
 /* harmony default export */ var es_pagination = (withInstall(pagination_Pagination));
-;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/ItemMeta.js
-
-
-
-
-var listItemMetaProps = function listItemMetaProps() {
-  return {
-    avatar: vue_types.any,
-    description: vue_types.any,
-    prefixCls: String,
-    title: vue_types.any
-  };
-};
-/* harmony default export */ var ItemMeta = ((0,external_Vue_namespaceObject.defineComponent)({
-  compatConfig: {
-    MODE: 3
-  },
-  name: 'AListItemMeta',
-  props: listItemMetaProps(),
-  displayName: 'AListItemMeta',
-  __ANT_LIST_ITEM_META: true,
-  slots: ['avatar', 'description', 'title'],
-  setup: function setup(props, _ref) {
-    var slots = _ref.slots;
-    var _useConfigInject = useConfigInject('list', props),
-      prefixCls = _useConfigInject.prefixCls;
-    return function () {
-      var _props$title, _slots$title, _props$description, _slots$description, _props$avatar, _slots$avatar;
-      var classString = "".concat(prefixCls.value, "-item-meta");
-      var title = (_props$title = props.title) !== null && _props$title !== void 0 ? _props$title : (_slots$title = slots.title) === null || _slots$title === void 0 ? void 0 : _slots$title.call(slots);
-      var description = (_props$description = props.description) !== null && _props$description !== void 0 ? _props$description : (_slots$description = slots.description) === null || _slots$description === void 0 ? void 0 : _slots$description.call(slots);
-      var avatar = (_props$avatar = props.avatar) !== null && _props$avatar !== void 0 ? _props$avatar : (_slots$avatar = slots.avatar) === null || _slots$avatar === void 0 ? void 0 : _slots$avatar.call(slots);
-      var content = (0,external_Vue_namespaceObject.createVNode)("div", {
-        "class": "".concat(prefixCls.value, "-item-meta-content")
-      }, [title && (0,external_Vue_namespaceObject.createVNode)("h4", {
-        "class": "".concat(prefixCls.value, "-item-meta-title")
-      }, [title]), description && (0,external_Vue_namespaceObject.createVNode)("div", {
-        "class": "".concat(prefixCls.value, "-item-meta-description")
-      }, [description])]);
-      return (0,external_Vue_namespaceObject.createVNode)("div", {
-        "class": classString
-      }, [avatar && (0,external_Vue_namespaceObject.createVNode)("div", {
-        "class": "".concat(prefixCls.value, "-item-meta-avatar")
-      }, [avatar]), (title || description) && content]);
-    };
-  }
-}));
-;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/contextKey.js
-var ListContextKey = Symbol('ListContextKey');
-;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/Item.js
-
-
-
-var list_Item_excluded = ["class"];
-
-
-
-
-
-
-
-
-
-
-var listItemProps = function listItemProps() {
-  return {
-    prefixCls: String,
-    extra: vue_types.any,
-    actions: vue_types.array,
-    grid: Object,
-    colStyle: {
-      type: Object,
-      default: undefined
-    }
-  };
-};
-/* harmony default export */ var list_Item = ((0,external_Vue_namespaceObject.defineComponent)({
-  compatConfig: {
-    MODE: 3
-  },
-  name: 'AListItem',
-  inheritAttrs: false,
-  Meta: ItemMeta,
-  props: listItemProps(),
-  slots: ['actions', 'extra'],
-  setup: function setup(props, _ref) {
-    var slots = _ref.slots,
-      attrs = _ref.attrs;
-    var _inject = (0,external_Vue_namespaceObject.inject)(ListContextKey, {
-        grid: (0,external_Vue_namespaceObject.ref)(),
-        itemLayout: (0,external_Vue_namespaceObject.ref)()
-      }),
-      itemLayout = _inject.itemLayout,
-      grid = _inject.grid;
-    var _useConfigInject = useConfigInject('list', props),
-      prefixCls = _useConfigInject.prefixCls;
-    var isItemContainsTextNodeAndNotSingular = function isItemContainsTextNodeAndNotSingular() {
-      var _slots$default;
-      var children = ((_slots$default = slots.default) === null || _slots$default === void 0 ? void 0 : _slots$default.call(slots)) || [];
-      var result;
-      children.forEach(function (element) {
-        if (isStringElement(element) && !isEmptyElement(element)) {
-          result = true;
-        }
-      });
-      return result && children.length > 1;
-    };
-    var isFlexMode = function isFlexMode() {
-      var _props$extra, _slots$extra;
-      var extra = (_props$extra = props.extra) !== null && _props$extra !== void 0 ? _props$extra : (_slots$extra = slots.extra) === null || _slots$extra === void 0 ? void 0 : _slots$extra.call(slots);
-      if (itemLayout.value === 'vertical') {
-        return !!extra;
-      }
-      return !isItemContainsTextNodeAndNotSingular();
-    };
-    return function () {
-      var _props$extra2, _slots$extra2, _slots$default2, _props$actions, _slots$actions;
-      var className = attrs.class,
-        restAttrs = objectWithoutProperties_objectWithoutProperties(attrs, list_Item_excluded);
-      var pre = prefixCls.value;
-      var extra = (_props$extra2 = props.extra) !== null && _props$extra2 !== void 0 ? _props$extra2 : (_slots$extra2 = slots.extra) === null || _slots$extra2 === void 0 ? void 0 : _slots$extra2.call(slots);
-      var children = (_slots$default2 = slots.default) === null || _slots$default2 === void 0 ? void 0 : _slots$default2.call(slots);
-      var actions = (_props$actions = props.actions) !== null && _props$actions !== void 0 ? _props$actions : flattenChildren((_slots$actions = slots.actions) === null || _slots$actions === void 0 ? void 0 : _slots$actions.call(slots));
-      actions = actions && !Array.isArray(actions) ? [actions] : actions;
-      var actionsContent = actions && actions.length > 0 && (0,external_Vue_namespaceObject.createVNode)("ul", {
-        "class": "".concat(pre, "-item-action"),
-        "key": "actions"
-      }, [actions.map(function (action, i) {
-        return (0,external_Vue_namespaceObject.createVNode)("li", {
-          "key": "".concat(pre, "-item-action-").concat(i)
-        }, [action, i !== actions.length - 1 && (0,external_Vue_namespaceObject.createVNode)("em", {
-          "class": "".concat(pre, "-item-action-split")
-        }, null)]);
-      })]);
-      var Element = grid.value ? 'div' : 'li';
-      var itemChildren = (0,external_Vue_namespaceObject.createVNode)(Element, objectSpread2_objectSpread2(objectSpread2_objectSpread2({}, restAttrs), {}, {
-        "class": _util_classNames("".concat(pre, "-item"), defineProperty_defineProperty({}, "".concat(pre, "-item-no-flex"), !isFlexMode()), className)
-      }), {
-        default: function _default() {
-          return [itemLayout.value === 'vertical' && extra ? [(0,external_Vue_namespaceObject.createVNode)("div", {
-            "class": "".concat(pre, "-item-main"),
-            "key": "content"
-          }, [children, actionsContent]), (0,external_Vue_namespaceObject.createVNode)("div", {
-            "class": "".concat(pre, "-item-extra"),
-            "key": "extra"
-          }, [extra])] : [children, actionsContent, cloneElement(extra, {
-            key: 'extra'
-          })]];
-        }
-      });
-      return grid.value ? (0,external_Vue_namespaceObject.createVNode)(Col, {
-        "flex": 1,
-        "style": props.colStyle
-      }, {
-        default: function _default() {
-          return [itemChildren];
-        }
-      }) : itemChildren;
-    };
-  }
-}));
 ;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/list/index.js
 
 
@@ -64935,12 +64942,6 @@ list_List.install = function (app) {
 
 /* harmony default export */ var list = (list_List);
 ;// CONCATENATED MODULE: ./src/lowcode/list/index.ts
-
-
-;// CONCATENATED MODULE: ./src/lowcode/list-item/index.ts
-
-
-;// CONCATENATED MODULE: ./src/lowcode/list-item-meta/index.ts
 
 
 ;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/mentions/style/index.less
@@ -81874,6 +81875,18 @@ var UploadDragger = (/* unused pure expression or super */ null && (Dragger));
 ;// CONCATENATED MODULE: ./src/lowcode/upload/index.ts
 
 
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/message/style/index.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/message/style/index.js
+
+
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/notification/style/index.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./node_modules/ant-design-vue/es/notification/style/index.js
+
+
 ;// CONCATENATED MODULE: ./src/index.ts
 /* eslint-disable */
 
@@ -81941,6 +81954,10 @@ var UploadDragger = (/* unused pure expression or super */ null && (Dragger));
 
 
 // @ts-ignore
+
+
+
+
 
 
 

@@ -41564,8 +41564,82 @@ __webpack_require__.d(htmlId_namespaceObject, {
 var antd_icon_setter_namespaceObject = {};
 __webpack_require__.r(antd_icon_setter_namespaceObject);
 
-;// CONCATENATED MODULE: ./src/lowcode/affix/meta.ts
+;// CONCATENATED MODULE: ./src/lowcode/anchor/meta.ts
 /* harmony default export */ var meta = ({
+  group: 'Antd',
+  componentName: 'AAnchor',
+  title: '锚点',
+  category: '基础组件',
+  npm: {
+    destructuring: true,
+    componentName: 'AAnchor'
+  },
+  snippets: [{
+    title: '锚点',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/anchor-1.png',
+    schema: {
+      componentName: 'AAnchor',
+      props: {},
+      children: [{
+        componentName: 'AAnchorLink',
+        props: {
+          title: 'Document'
+        }
+      }, {
+        componentName: 'AAnchorLink',
+        props: {
+          title: 'API'
+        }
+      }, {
+        componentName: 'AAnchorLink',
+        props: {
+          title: 'Demo'
+        }
+      }]
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/anchor-link/meta.ts
+/* harmony default export */ var anchor_link_meta = ({
+  group: 'Antd',
+  componentName: 'AAnchorLink',
+  title: '锚点链接',
+  category: '其他',
+  npm: {
+    destructuring: true,
+    componentName: 'AAnchorLink'
+  },
+  props: [{
+    name: 'href',
+    title: {
+      label: '锚点链接',
+      tip: '锚点链接'
+    },
+    propType: 'string'
+  }, {
+    name: 'target',
+    title: {
+      label: 'target',
+      tip: '该属性指定在何处显示链接的资源'
+    },
+    propType: 'string'
+  }, {
+    name: 'title',
+    title: {
+      label: '内容',
+      tip: '内容'
+    },
+    propType: 'string'
+  }],
+  configure: {
+    supports: {
+      style: true
+    }
+  },
+  snippets: []
+});
+;// CONCATENATED MODULE: ./src/lowcode/affix/meta.ts
+/* harmony default export */ var affix_meta = ({
   group: 'Antd',
   componentName: 'AAffix',
   title: '固钉',
@@ -41617,233 +41691,6 @@ __webpack_require__.r(antd_icon_setter_namespaceObject);
         componentName: "AButton",
         props: {
           children: "Affix Top"
-        }
-      }]
-    }
-  }]
-});
-;// CONCATENATED MODULE: ./src/lowcode/anchor-link/meta.ts
-/* harmony default export */ var anchor_link_meta = ({
-  group: 'Antd',
-  componentName: 'AAnchorLink',
-  title: '锚点链接',
-  category: '其他',
-  npm: {
-    destructuring: true,
-    componentName: 'AAnchorLink'
-  },
-  props: [{
-    name: 'href',
-    title: {
-      label: '锚点链接',
-      tip: '锚点链接'
-    },
-    propType: 'string'
-  }, {
-    name: 'target',
-    title: {
-      label: 'target',
-      tip: '该属性指定在何处显示链接的资源'
-    },
-    propType: 'string'
-  }, {
-    name: 'title',
-    title: {
-      label: '内容',
-      tip: '内容'
-    },
-    propType: 'string'
-  }],
-  configure: {
-    supports: {
-      style: true
-    }
-  },
-  snippets: []
-});
-;// CONCATENATED MODULE: ./src/lowcode/alert/meta.ts
-/* harmony default export */ var alert_meta = ({
-  group: 'Antd',
-  componentName: "AAlert",
-  title: '警告提示',
-  category: '反馈',
-  npm: {
-    destructuring: true,
-    componentName: 'AAlert'
-  },
-  props: [{
-    name: 'afterClose',
-    title: {
-      label: '关闭动画结束后触发的回调函数',
-      tip: '关闭动画结束后触发的回调函数'
-    },
-    propType: 'func'
-  }, {
-    name: 'banner',
-    title: {
-      label: '顶部公告',
-      tip: '是否用作顶部公告'
-    },
-    propType: 'bool',
-    defaultValue: false
-  }, {
-    name: 'closable',
-    title: {
-      label: '可关闭',
-      tip: '默认不显示关闭按钮'
-    },
-    propType: 'bool'
-  }, {
-    name: 'closeText',
-    title: {
-      label: '自定义关闭按钮',
-      tip: '自定义关闭按钮'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'description',
-    title: {
-      label: '描述信息',
-      tip: '警告提示的辅助性文字介绍'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'icon',
-    title: {
-      label: '图标',
-      tip: '自定义图标，`showIcon` 为 true 时有效'
-    },
-    propType: 'node'
-  }, {
-    name: 'message',
-    title: {
-      label: '警告提示内容',
-      tip: '警告提示内容'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'showIcon',
-    title: {
-      label: '显示图标',
-      tip: '是否显示辅助图标'
-    },
-    propType: 'bool'
-  }, {
-    name: 'type',
-    title: {
-      label: '类型',
-      tip: '类型'
-    },
-    propType: {
-      type: 'oneOf',
-      value: ['success', 'info', 'warning', 'error']
-    }
-  }, {
-    name: 'onClose',
-    title: {
-      label: '关闭时触发的回调函数',
-      tip: '关闭时触发的回调函数'
-    },
-    propType: 'func'
-  }],
-  configure: {
-    supports: {
-      style: true,
-      events: [{
-        name: 'close',
-        template: "close(event,${extParams}){\n// 关闭时触发的回调函数\nconsole.log('close',event);}"
-      }]
-    }
-  },
-  snippets: [{
-    title: '成功提示',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-1.png',
-    schema: {
-      componentName: 'AAlert',
-      props: {
-        message: 'Success Tips',
-        description: 'Detailed description and advice about successful copywriting.',
-        type: 'success',
-        showIcon: true
-      }
-    }
-  }, {
-    title: '信息提示',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-2.png',
-    schema: {
-      componentName: 'AAlert',
-      props: {
-        message: 'Informational Notes',
-        description: 'Additional description and information about copywriting.',
-        type: 'info',
-        showIcon: true
-      }
-    }
-  }, {
-    title: '警告提示',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-3.png',
-    schema: {
-      componentName: 'AAlert',
-      props: {
-        message: 'Warning',
-        description: 'This is a warning notice about copywriting.',
-        type: 'warning',
-        showIcon: true
-      }
-    }
-  }, {
-    title: '错误提示',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-4.png',
-    schema: {
-      componentName: 'AAlert',
-      props: {
-        message: 'Error',
-        description: 'This is an error message about copywriting.',
-        type: 'error',
-        showIcon: true
-      }
-    }
-  }]
-});
-;// CONCATENATED MODULE: ./src/lowcode/anchor/meta.ts
-/* harmony default export */ var anchor_meta = ({
-  group: 'Antd',
-  componentName: 'AAnchor',
-  title: '锚点',
-  category: '基础组件',
-  npm: {
-    destructuring: true,
-    componentName: 'AAnchor'
-  },
-  snippets: [{
-    title: '锚点',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/anchor-1.png',
-    schema: {
-      componentName: 'AAnchor',
-      props: {},
-      children: [{
-        componentName: 'AAnchorLink',
-        props: {
-          title: 'Document'
-        }
-      }, {
-        componentName: 'AAnchorLink',
-        props: {
-          title: 'API'
-        }
-      }, {
-        componentName: 'AAnchorLink',
-        props: {
-          title: 'Demo'
         }
       }]
     }
@@ -42276,6 +42123,159 @@ __webpack_require__.r(antd_icon_setter_namespaceObject);
     }
   }]
 });
+;// CONCATENATED MODULE: ./src/lowcode/alert/meta.ts
+/* harmony default export */ var alert_meta = ({
+  group: 'Antd',
+  componentName: "AAlert",
+  title: '警告提示',
+  category: '反馈',
+  npm: {
+    destructuring: true,
+    componentName: 'AAlert'
+  },
+  props: [{
+    name: 'afterClose',
+    title: {
+      label: '关闭动画结束后触发的回调函数',
+      tip: '关闭动画结束后触发的回调函数'
+    },
+    propType: 'func'
+  }, {
+    name: 'banner',
+    title: {
+      label: '顶部公告',
+      tip: '是否用作顶部公告'
+    },
+    propType: 'bool',
+    defaultValue: false
+  }, {
+    name: 'closable',
+    title: {
+      label: '可关闭',
+      tip: '默认不显示关闭按钮'
+    },
+    propType: 'bool'
+  }, {
+    name: 'closeText',
+    title: {
+      label: '自定义关闭按钮',
+      tip: '自定义关闭按钮'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'description',
+    title: {
+      label: '描述信息',
+      tip: '警告提示的辅助性文字介绍'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'icon',
+    title: {
+      label: '图标',
+      tip: '自定义图标，`showIcon` 为 true 时有效'
+    },
+    propType: 'node'
+  }, {
+    name: 'message',
+    title: {
+      label: '警告提示内容',
+      tip: '警告提示内容'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'showIcon',
+    title: {
+      label: '显示图标',
+      tip: '是否显示辅助图标'
+    },
+    propType: 'bool'
+  }, {
+    name: 'type',
+    title: {
+      label: '类型',
+      tip: '类型'
+    },
+    propType: {
+      type: 'oneOf',
+      value: ['success', 'info', 'warning', 'error']
+    }
+  }, {
+    name: 'onClose',
+    title: {
+      label: '关闭时触发的回调函数',
+      tip: '关闭时触发的回调函数'
+    },
+    propType: 'func'
+  }],
+  configure: {
+    supports: {
+      style: true,
+      events: [{
+        name: 'close',
+        template: "close(event,${extParams}){\n// 关闭时触发的回调函数\nconsole.log('close',event);}"
+      }]
+    }
+  },
+  snippets: [{
+    title: '成功提示',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-1.png',
+    schema: {
+      componentName: 'AAlert',
+      props: {
+        message: 'Success Tips',
+        description: 'Detailed description and advice about successful copywriting.',
+        type: 'success',
+        showIcon: true
+      }
+    }
+  }, {
+    title: '信息提示',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-2.png',
+    schema: {
+      componentName: 'AAlert',
+      props: {
+        message: 'Informational Notes',
+        description: 'Additional description and information about copywriting.',
+        type: 'info',
+        showIcon: true
+      }
+    }
+  }, {
+    title: '警告提示',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-3.png',
+    schema: {
+      componentName: 'AAlert',
+      props: {
+        message: 'Warning',
+        description: 'This is a warning notice about copywriting.',
+        type: 'warning',
+        showIcon: true
+      }
+    }
+  }, {
+    title: '错误提示',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-4.png',
+    schema: {
+      componentName: 'AAlert',
+      props: {
+        message: 'Error',
+        description: 'This is an error message about copywriting.',
+        type: 'error',
+        showIcon: true
+      }
+    }
+  }]
+});
 ;// CONCATENATED MODULE: ./src/lowcode/avatar/meta.ts
 /* eslint-disable */
 const meta_meta = {
@@ -42443,68 +42443,11 @@ const meta_meta = {
   }]
 };
 /* harmony default export */ var avatar_meta = (meta_meta);
-;// CONCATENATED MODULE: ./src/lowcode/back-top/meta.ts
-/* harmony default export */ var back_top_meta = ({
-  group: 'Antd',
-  componentName: 'ABackTop',
-  title: '回到顶部',
-  category: '导航',
-  npm: {
-    destructuring: true,
-    componentName: 'ABackTop'
-  },
-  props: [{
-    name: 'target',
-    title: {
-      label: '监听元素',
-      tip: '设置需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数'
-    },
-    propType: 'func'
-  }, {
-    name: 'visibilityHeight',
-    title: {
-      label: '可见高度',
-      tip: '滚动高度达到此参数值才出现 BackTop'
-    },
-    propType: 'number'
-  }, {
-    name: 'click',
-    title: {
-      label: '点击按钮的回调函数',
-      tip: '点击按钮的回调函数'
-    },
-    propType: 'func'
-  }, {
-    name: 'duration',
-    title: {
-      label: '滚动时间',
-      tip: '回到顶部所需时间（ms）'
-    },
-    propType: 'number'
-  }],
-  configure: {
-    supports: {
-      style: true,
-      events: [{
-        name: 'click',
-        template: "click(${extParams}){\n// 点击按钮的回调函数\nconsole.log('click');}"
-      }]
-    }
-  },
-  snippets: [{
-    title: "回到顶部",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/back-top-1.jpg",
-    schema: {
-      componentName: "ABackTop",
-      props: {}
-    }
-  }]
-});
 ;// CONCATENATED MODULE: ./src/lowcode/badge/meta.ts
 /* harmony default export */ var badge_meta = ([{
   group: 'Antd',
   componentName: "ABadge",
-  title: "徽章",
+  title: "徽章(徽标数)",
   category: "数据展示",
   npm: {
     destructuring: true,
@@ -42595,7 +42538,7 @@ const meta_meta = {
     }
   },
   snippets: [{
-    title: "徽章",
+    title: "徽章(徽标数)",
     screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/badge-1.png",
     schema: {
       componentName: "ABadge",
@@ -42606,172 +42549,6 @@ const meta_meta = {
     }
   }]
 }]);
-;// CONCATENATED MODULE: ./src/lowcode/breadcrumb/meta.ts
-/* harmony default export */ var breadcrumb_meta = ({
-  group: 'Antd',
-  componentName: 'ABreadcrumb',
-  title: '面包屑',
-  category: '基础组件',
-  npm: {
-    destructuring: true,
-    componentName: 'ABreadcrumb'
-  },
-  props: [{
-    title: '基础',
-    display: 'block',
-    type: 'group',
-    items: [{
-      name: 'routes',
-      title: {
-        label: '路由栈信息',
-        tip: 'router 的路由栈信息'
-      },
-      propType: {
-        type: 'arrayOf',
-        value: {
-          type: 'shape',
-          value: [{
-            name: 'path',
-            propType: 'string'
-          }, {
-            name: 'breadcrumbName',
-            propType: 'string'
-          }]
-        }
-      },
-      setter: {
-        componentName: 'ArraySetter',
-        props: {
-          itemSetter: {
-            componentName: 'ObjectSetter',
-            props: {
-              config: {
-                items: [{
-                  name: 'path',
-                  title: {
-                    label: '路由路径',
-                    tip: 'path | 路由路径'
-                  },
-                  propType: 'string',
-                  setter: 'StringSetter',
-                  isRequired: true
-                }, {
-                  name: 'breadcrumbName',
-                  title: {
-                    label: '路由名称',
-                    tip: 'breadcrumbName | 路由名称'
-                  },
-                  propType: 'string',
-                  setter: 'StringSetter',
-                  isRequired: true
-                }]
-              }
-            },
-            initialValue: {
-              path: 'path',
-              breadcrumbName: 'breadcrumbName'
-            }
-          }
-        }
-      }
-    }, {
-      name: 'params',
-      title: {
-        label: '路由的参数',
-        tip: '路由的参数'
-      },
-      propType: 'object',
-      setter: 'JsonSetter'
-    }, {
-      name: 'separator',
-      title: {
-        label: '分隔符自定义',
-        tip: '分隔符自定义'
-      },
-      propType: {
-        type: 'oneOfType',
-        value: ['string', 'node']
-      },
-      setter: ['StringSetter', {
-        componentName: 'SlotSetter',
-        initialValue: {
-          type: 'JSSlot',
-          value: []
-        }
-      }, 'VariableSetter']
-    }]
-  }, {
-    title: '扩展',
-    display: 'block',
-    type: 'group',
-    items: [{
-      name: 'itemRender',
-      title: {
-        label: '自定义渲染',
-        tip: 'itemRender | 自定义渲染'
-      },
-      propType: {
-        type: 'oneOfType',
-        value: ['func', 'node']
-      },
-      setter: [{
-        componentName: 'SlotSetter',
-        title: '自定义渲染插槽',
-        initialValue: {
-          type: 'JSSlot',
-          params: ['route', 'params', 'routes', 'paths'],
-          value: []
-        }
-      }, {
-        componentName: 'FunctionSetter',
-        props: {
-          template: 'itemRender(route, params, routes, paths,${extParams}){\n// 自定义渲染\nreturn `${route.breadcrumbName}`}'
-        }
-      }, 'VariableSetter']
-    }]
-  }],
-  configure: {
-    supports: {
-      style: true
-    }
-  },
-  snippets: [{
-    title: "面包屑",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/breadcrumb-1.jpg",
-    schema: {
-      componentName: "ABreadcrumb",
-      props: {
-        routes: [{
-          path: "home",
-          breadcrumbName: "Home"
-        }, {
-          path: "order",
-          breadcrumbName: "Order"
-        }, {
-          path: "app",
-          breadcrumbName: "An application"
-        }],
-        itemRender: {
-          type: 'JSSlot',
-          params: ['route', 'params', 'routes', 'paths'],
-          value: [{
-            componentName: 'ATypographyLink',
-            props: {
-              href: {
-                type: 'JSExpression',
-                value: 'this.route.path'
-              },
-              children: {
-                type: 'JSExpression',
-                value: 'this.route.breadcrumbName'
-              }
-            }
-          }]
-        }
-      }
-    }
-  }]
-});
 ;// CONCATENATED MODULE: ./src/lowcode/button/meta.ts
 /* eslint-disable */
 // @ts-ignore
@@ -43106,6 +42883,229 @@ const meta_meta = {
     }
   }]
 });
+;// CONCATENATED MODULE: ./src/lowcode/back-top/meta.ts
+/* harmony default export */ var back_top_meta = ({
+  group: 'Antd',
+  componentName: 'ABackTop',
+  title: '回到顶部',
+  category: '导航',
+  npm: {
+    destructuring: true,
+    componentName: 'ABackTop'
+  },
+  props: [{
+    name: 'target',
+    title: {
+      label: '监听元素',
+      tip: '设置需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数'
+    },
+    propType: 'func'
+  }, {
+    name: 'visibilityHeight',
+    title: {
+      label: '可见高度',
+      tip: '滚动高度达到此参数值才出现 BackTop'
+    },
+    propType: 'number'
+  }, {
+    name: 'click',
+    title: {
+      label: '点击按钮的回调函数',
+      tip: '点击按钮的回调函数'
+    },
+    propType: 'func'
+  }, {
+    name: 'duration',
+    title: {
+      label: '滚动时间',
+      tip: '回到顶部所需时间（ms）'
+    },
+    propType: 'number'
+  }],
+  configure: {
+    supports: {
+      style: true,
+      events: [{
+        name: 'click',
+        template: "click(${extParams}){\n// 点击按钮的回调函数\nconsole.log('click');}"
+      }]
+    }
+  },
+  snippets: [{
+    title: "回到顶部",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/back-top-1.jpg",
+    schema: {
+      componentName: "ABackTop",
+      props: {}
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/breadcrumb/meta.ts
+/* harmony default export */ var breadcrumb_meta = ({
+  group: 'Antd',
+  componentName: 'ABreadcrumb',
+  title: '面包屑',
+  category: '基础组件',
+  npm: {
+    destructuring: true,
+    componentName: 'ABreadcrumb'
+  },
+  props: [{
+    title: '基础',
+    display: 'block',
+    type: 'group',
+    items: [{
+      name: 'routes',
+      title: {
+        label: '路由栈信息',
+        tip: 'router 的路由栈信息'
+      },
+      propType: {
+        type: 'arrayOf',
+        value: {
+          type: 'shape',
+          value: [{
+            name: 'path',
+            propType: 'string'
+          }, {
+            name: 'breadcrumbName',
+            propType: 'string'
+          }]
+        }
+      },
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [{
+                  name: 'path',
+                  title: {
+                    label: '路由路径',
+                    tip: 'path | 路由路径'
+                  },
+                  propType: 'string',
+                  setter: 'StringSetter',
+                  isRequired: true
+                }, {
+                  name: 'breadcrumbName',
+                  title: {
+                    label: '路由名称',
+                    tip: 'breadcrumbName | 路由名称'
+                  },
+                  propType: 'string',
+                  setter: 'StringSetter',
+                  isRequired: true
+                }]
+              }
+            },
+            initialValue: {
+              path: 'path',
+              breadcrumbName: 'breadcrumbName'
+            }
+          }
+        }
+      }
+    }, {
+      name: 'params',
+      title: {
+        label: '路由的参数',
+        tip: '路由的参数'
+      },
+      propType: 'object',
+      setter: 'JsonSetter'
+    }, {
+      name: 'separator',
+      title: {
+        label: '分隔符自定义',
+        tip: '分隔符自定义'
+      },
+      propType: {
+        type: 'oneOfType',
+        value: ['string', 'node']
+      },
+      setter: ['StringSetter', {
+        componentName: 'SlotSetter',
+        initialValue: {
+          type: 'JSSlot',
+          value: []
+        }
+      }, 'VariableSetter']
+    }]
+  }, {
+    title: '扩展',
+    display: 'block',
+    type: 'group',
+    items: [{
+      name: 'itemRender',
+      title: {
+        label: '自定义渲染',
+        tip: 'itemRender | 自定义渲染'
+      },
+      propType: {
+        type: 'oneOfType',
+        value: ['func', 'node']
+      },
+      setter: [{
+        componentName: 'SlotSetter',
+        title: '自定义渲染插槽',
+        initialValue: {
+          type: 'JSSlot',
+          params: ['route', 'params', 'routes', 'paths'],
+          value: []
+        }
+      }, {
+        componentName: 'FunctionSetter',
+        props: {
+          template: 'itemRender(route, params, routes, paths,${extParams}){\n// 自定义渲染\nreturn `${route.breadcrumbName}`}'
+        }
+      }, 'VariableSetter']
+    }]
+  }],
+  configure: {
+    supports: {
+      style: true
+    }
+  },
+  snippets: [{
+    title: "面包屑",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/breadcrumb-1.jpg",
+    schema: {
+      componentName: "ABreadcrumb",
+      props: {
+        routes: [{
+          path: "home",
+          breadcrumbName: "Home"
+        }, {
+          path: "order",
+          breadcrumbName: "Order"
+        }, {
+          path: "app",
+          breadcrumbName: "An application"
+        }],
+        itemRender: {
+          type: 'JSSlot',
+          params: ['route', 'params', 'routes', 'paths'],
+          value: [{
+            componentName: 'ATypographyLink',
+            props: {
+              href: {
+                type: 'JSExpression',
+                value: 'this.route.path'
+              },
+              children: {
+                type: 'JSExpression',
+                value: 'this.route.breadcrumbName'
+              }
+            }
+          }]
+        }
+      }
+    }
+  }]
+});
 ;// CONCATENATED MODULE: ./src/lowcode/calendar/meta.ts
 /* harmony default export */ var calendar_meta = ({
   group: 'Antd',
@@ -43244,20 +43244,31 @@ const meta_meta = {
     propType: 'bool',
     defaultValue: true
   }, {
-    name: 'bodyStyle',
+    name: 'customTab',
     title: {
-      label: '内容样式',
-      tip: '内容区域自定义样式'
+      label: '自定义tab',
+      tip: '自定义 tabList tab 标签'
     },
-    propType: 'object'
-  }, {
-    name: 'headStyle',
-    title: {
-      label: '标题样式',
-      tip: '自定义标题区域样式'
-    },
-    propType: 'object'
-  }, {
+    propType: 'node',
+    initialValue: {
+      type: 'JSSlot',
+      params: ['data'],
+      value: []
+    }
+  },
+  // {
+  //   name: 'bodyStyle',
+  //   title: { label: '内容样式', tip: '内容区域自定义样式' },
+  //   propType: 'object',
+  //   defaultValue:{}
+  // },
+  // {
+  //   name:'headStyle',
+  //   title:{label:'标题样式',tip:'自定义标题区域样式'},
+  //   propType:'object',
+  //   defaultValue:{}
+  // },
+  {
     name: 'extra',
     title: {
       label: '额外元素',
@@ -43324,7 +43335,7 @@ const meta_meta = {
     schema: {
       componentName: "ACard",
       props: {
-        title: "Default card for lyl",
+        title: "卡片标题-lyl-test",
         style: {
           width: "300px"
         }
@@ -43557,7 +43568,7 @@ function uuid() {
   group: 'Antd',
   componentName: 'ACascader',
   title: '级联选择框',
-  category: '表单',
+  category: '数据录入',
   npm: {
     destructuring: true,
     componentName: 'ACascader'
@@ -43815,6 +43826,243 @@ function uuid() {
     }
   }
 });
+;// CONCATENATED MODULE: ./src/lowcode/collapse/meta.ts
+
+
+/* harmony default export */ var collapse_meta = ({
+  group: 'Antd',
+  componentName: 'ACollapse',
+  title: '折叠面板',
+  category: '数据展示',
+  npm: {
+    destructuring: true,
+    componentName: 'ACollapse'
+  },
+  props: [{
+    name: 'bordered',
+    title: {
+      label: '显示边框',
+      tip: '带边框风格的折叠面板'
+    },
+    propType: 'bool',
+    defaultValue: true,
+    setter: 'BoolSetter',
+    supportVariable: true
+  }, {
+    name: 'accordion',
+    title: {
+      label: '手风琴模式',
+      tip: '手风琴模式'
+    },
+    propType: 'bool',
+    defaultValue: false,
+    setter: 'BoolSetter',
+    supportVariable: true
+  }, {
+    name: 'collapsible',
+    title: '可折叠触发区域',
+    propType: {
+      type: 'oneOf',
+      value: ['-', 'header', 'disabled']
+    }
+  }, {
+    name: 'expandIconPosition',
+    title: {
+      label: '图标位置',
+      tip: '设置图标位置'
+    },
+    propType: {
+      type: 'oneOf',
+      value: ['left', 'right']
+    }
+  }, {
+    name: 'destroyInactivePanel',
+    title: {
+      label: '隐藏时销毁',
+      tip: '销毁折叠隐藏的面板'
+    },
+    propType: 'bool',
+    defaultValue: false,
+    setter: 'BoolSetter',
+    supportVariable: true
+  }, {
+    name: 'ghost',
+    title: {
+      label: '透明无边框',
+      tip: '使折叠面板透明且无边框'
+    },
+    propType: 'bool',
+    defaultValue: false,
+    setter: 'BoolSetter',
+    supportVariable: true
+  }, {
+    name: 'collapses',
+    title: '折叠项',
+    setter: {
+      componentName: 'ArraySetter',
+      props: {
+        itemSetter: {
+          componentName: 'ObjectSetter',
+          props: {
+            config: {
+              items: [{
+                name: 'key',
+                title: 'key',
+                setter: 'StringSetter',
+                initialValue: val => val || uuid()
+              }, {
+                name: 'header',
+                title: '面板头内容',
+                setter: 'StringSetter',
+                initialValue: '折叠项'
+              }]
+            }
+          },
+          initialValue: () => {
+            return {
+              key: uuid(),
+              header: '折叠项',
+              showArrow: true,
+              collapsible: undefined,
+              forceRender: false
+            };
+          }
+        }
+      }
+    },
+    extraProps: {
+      getValue(target) {
+        console.log('getValue', target.node.children.length);
+        const map = target.node.children.map(child => {
+          const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+          return {
+            key,
+            header: child.getPropValue('header'),
+            showArrow: child.getPropValue('showArrow'),
+            collapsible: child.getPropValue('collapsible'),
+            forceRender: child.getPropValue('forceRender')
+          };
+        });
+        return map;
+      },
+      setValue(target, value) {
+        const {
+          node
+        } = target;
+        const map = {};
+        // console.log('setValue',value);
+        if (!Array.isArray(value)) {
+          value = [];
+        }
+        value.forEach(item => {
+          const tabItem = Object.assign({}, item);
+          // @ts-ignore
+          map[item.key] = tabItem;
+        });
+        node.children.mergeChildren(child => {
+          const key = String(child.getPropValue('key'));
+          if (Object.hasOwnProperty.call(map, key)) {
+            // @ts-ignore
+            child.setPropValue('header', map[key].header);
+            // @ts-ignore
+            child.setPropValue('showArrow', map[key].showArrow);
+            // @ts-ignore
+            child.setPropValue('collapsible', map[key].collapsible);
+            // @ts-ignore
+            child.setPropValue('forceRender', map[key].forceRender);
+            // @ts-ignore
+            delete map[key];
+            return false;
+          }
+          return true;
+        }, () => {
+          const items = [];
+          for (const key in map) {
+            if (Object.hasOwnProperty.call(map, key)) {
+              items.push({
+                componentName: 'ACollapsePanel',
+                // @ts-ignore
+                props: map[key]
+              });
+            }
+          }
+          return items;
+        }, (child1, child2) => {
+          const a = value.findIndex(item => String(item.key) === String(child1.getPropValue('key')));
+          const b = value.findIndex(item => String(item.key) === String(child2.getPropValue('key')));
+          return a - b;
+        });
+      }
+    }
+  }, {
+    name: 'defaultActiveKey',
+    title: {
+      label: '初始化选中面板的 key',
+      tip: '初始化选中面板的 key'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', {
+        type: 'arrayOf',
+        value: 'string'
+      }, 'number', {
+        type: 'arrayOf',
+        value: 'number'
+      }]
+    }
+  }, {
+    name: 'activeKey',
+    title: {
+      label: '当前激活 tab 面板的 key',
+      tip: '当前激活 tab 面板的 key'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', {
+        type: 'arrayOf',
+        value: 'string'
+      }, 'number', {
+        type: 'arrayOf',
+        value: 'number'
+      }]
+    }
+  }],
+  configure: {
+    component: {
+      isContainer: true
+    },
+    supports: {
+      style: true
+    },
+    events: [{
+      name: 'onChange ',
+      template: "onChange (key,${extParams}){\n// 切换面板的回调\nconsole.log('onChange ',key);}"
+    }]
+  },
+  snippets: [{
+    title: "折叠面板",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/collapse-1.png",
+    schema: {
+      componentName: "ACollapse",
+      props: {
+        defaultActiveKey: ['collapse-item-1']
+      },
+      children: [{
+        componentName: 'ACollapsePanel',
+        props: {
+          header: '折叠项1',
+          key: 'collapse-item-1'
+        }
+      }, {
+        componentName: 'ACollapsePanel',
+        props: {
+          header: '折叠项2',
+          key: 'collapse-item-2'
+        }
+      }]
+    }
+  }]
+});
 ;// CONCATENATED MODULE: ./src/lowcode/checkbox/meta.ts
 /* eslint-disable */
 // @ts-ignore
@@ -44067,243 +44315,6 @@ function uuid() {
           value: '3'
         }]
       }
-    }
-  }]
-});
-;// CONCATENATED MODULE: ./src/lowcode/collapse/meta.ts
-
-
-/* harmony default export */ var collapse_meta = ({
-  group: 'Antd',
-  componentName: 'ACollapse',
-  title: '折叠面板',
-  category: '数据展示',
-  npm: {
-    destructuring: true,
-    componentName: 'ACollapse'
-  },
-  props: [{
-    name: 'bordered',
-    title: {
-      label: '显示边框',
-      tip: '带边框风格的折叠面板'
-    },
-    propType: 'bool',
-    defaultValue: true,
-    setter: 'BoolSetter',
-    supportVariable: true
-  }, {
-    name: 'accordion',
-    title: {
-      label: '手风琴模式',
-      tip: '手风琴模式'
-    },
-    propType: 'bool',
-    defaultValue: false,
-    setter: 'BoolSetter',
-    supportVariable: true
-  }, {
-    name: 'collapsible',
-    title: '可折叠触发区域',
-    propType: {
-      type: 'oneOf',
-      value: ['-', 'header', 'disabled']
-    }
-  }, {
-    name: 'expandIconPosition',
-    title: {
-      label: '图标位置',
-      tip: '设置图标位置'
-    },
-    propType: {
-      type: 'oneOf',
-      value: ['left', 'right']
-    }
-  }, {
-    name: 'destroyInactivePanel',
-    title: {
-      label: '隐藏时销毁',
-      tip: '销毁折叠隐藏的面板'
-    },
-    propType: 'bool',
-    defaultValue: false,
-    setter: 'BoolSetter',
-    supportVariable: true
-  }, {
-    name: 'ghost',
-    title: {
-      label: '透明无边框',
-      tip: '使折叠面板透明且无边框'
-    },
-    propType: 'bool',
-    defaultValue: false,
-    setter: 'BoolSetter',
-    supportVariable: true
-  }, {
-    name: 'collapses',
-    title: '折叠项',
-    setter: {
-      componentName: 'ArraySetter',
-      props: {
-        itemSetter: {
-          componentName: 'ObjectSetter',
-          props: {
-            config: {
-              items: [{
-                name: 'key',
-                title: 'key',
-                setter: 'StringSetter',
-                initialValue: val => val || uuid()
-              }, {
-                name: 'header',
-                title: '面板头内容',
-                setter: 'StringSetter',
-                initialValue: '折叠项'
-              }]
-            }
-          },
-          initialValue: () => {
-            return {
-              key: uuid(),
-              header: '折叠项',
-              showArrow: true,
-              collapsible: undefined,
-              forceRender: false
-            };
-          }
-        }
-      }
-    },
-    extraProps: {
-      getValue(target) {
-        console.log('getValue', target.node.children.length);
-        const map = target.node.children.map(child => {
-          const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
-          return {
-            key,
-            header: child.getPropValue('header'),
-            showArrow: child.getPropValue('showArrow'),
-            collapsible: child.getPropValue('collapsible'),
-            forceRender: child.getPropValue('forceRender')
-          };
-        });
-        return map;
-      },
-      setValue(target, value) {
-        const {
-          node
-        } = target;
-        const map = {};
-        // console.log('setValue',value);
-        if (!Array.isArray(value)) {
-          value = [];
-        }
-        value.forEach(item => {
-          const tabItem = Object.assign({}, item);
-          // @ts-ignore
-          map[item.key] = tabItem;
-        });
-        node.children.mergeChildren(child => {
-          const key = String(child.getPropValue('key'));
-          if (Object.hasOwnProperty.call(map, key)) {
-            // @ts-ignore
-            child.setPropValue('header', map[key].header);
-            // @ts-ignore
-            child.setPropValue('showArrow', map[key].showArrow);
-            // @ts-ignore
-            child.setPropValue('collapsible', map[key].collapsible);
-            // @ts-ignore
-            child.setPropValue('forceRender', map[key].forceRender);
-            // @ts-ignore
-            delete map[key];
-            return false;
-          }
-          return true;
-        }, () => {
-          const items = [];
-          for (const key in map) {
-            if (Object.hasOwnProperty.call(map, key)) {
-              items.push({
-                componentName: 'ACollapsePanel',
-                // @ts-ignore
-                props: map[key]
-              });
-            }
-          }
-          return items;
-        }, (child1, child2) => {
-          const a = value.findIndex(item => String(item.key) === String(child1.getPropValue('key')));
-          const b = value.findIndex(item => String(item.key) === String(child2.getPropValue('key')));
-          return a - b;
-        });
-      }
-    }
-  }, {
-    name: 'defaultActiveKey',
-    title: {
-      label: '初始化选中面板的 key',
-      tip: '初始化选中面板的 key'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', {
-        type: 'arrayOf',
-        value: 'string'
-      }, 'number', {
-        type: 'arrayOf',
-        value: 'number'
-      }]
-    }
-  }, {
-    name: 'activeKey',
-    title: {
-      label: '当前激活 tab 面板的 key',
-      tip: '当前激活 tab 面板的 key'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', {
-        type: 'arrayOf',
-        value: 'string'
-      }, 'number', {
-        type: 'arrayOf',
-        value: 'number'
-      }]
-    }
-  }],
-  configure: {
-    component: {
-      isContainer: true
-    },
-    supports: {
-      style: true
-    },
-    events: [{
-      name: 'onChange ',
-      template: "onChange (key,${extParams}){\n// 切换面板的回调\nconsole.log('onChange ',key);}"
-    }]
-  },
-  snippets: [{
-    title: "折叠面板",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/collapse-1.png",
-    schema: {
-      componentName: "ACollapse",
-      props: {
-        defaultActiveKey: ['collapse-item-1']
-      },
-      children: [{
-        componentName: 'ACollapsePanel',
-        props: {
-          header: '折叠项1',
-          key: 'collapse-item-1'
-        }
-      }, {
-        componentName: 'ACollapsePanel',
-        props: {
-          header: '折叠项2',
-          key: 'collapse-item-2'
-        }
-      }]
     }
   }]
 });
@@ -44715,6 +44726,40 @@ function uuid() {
     }
   }]
 });
+;// CONCATENATED MODULE: ./src/lowcode/descriptions-item/meta.ts
+/* harmony default export */ var descriptions_item_meta = ({
+  group: 'Antd',
+  componentName: 'ADescriptionsItem',
+  title: '提及',
+  category: '数据展示',
+  npm: {
+    destructuring: true,
+    componentName: 'ADescriptionsItem'
+  },
+  props: [{
+    name: 'key',
+    title: {
+      label: 'key',
+      tip: 'key'
+    },
+    propType: 'string'
+  }, {
+    name: 'tab',
+    title: {
+      label: '标题',
+      tip: '标题'
+    },
+    propType: 'string'
+  }],
+  configure: {
+    component: {
+      isContainer: true
+    },
+    supports: {
+      style: true
+    }
+  }
+});
 ;// CONCATENATED MODULE: ./src/lowcode/descriptions/meta.ts
 
 
@@ -44919,162 +44964,6 @@ function uuid() {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/descriptions-item/meta.ts
-/* harmony default export */ var descriptions_item_meta = ({
-  group: 'Antd',
-  componentName: 'ADescriptionsItem',
-  title: '提及',
-  category: '数据展示',
-  npm: {
-    destructuring: true,
-    componentName: 'ADescriptionsItem'
-  },
-  props: [{
-    name: 'key',
-    title: {
-      label: 'key',
-      tip: 'key'
-    },
-    propType: 'string'
-  }, {
-    name: 'tab',
-    title: {
-      label: '标题',
-      tip: '标题'
-    },
-    propType: 'string'
-  }],
-  configure: {
-    component: {
-      isContainer: true
-    },
-    supports: {
-      style: true
-    }
-  }
-});
-;// CONCATENATED MODULE: ./src/lowcode/divider/meta.ts
-/* eslint-disable */
-// @ts-ignore
-const divider_meta_meta = {
-  group: 'Antd',
-  componentName: 'ADivider',
-  title: '分割线',
-  category: '数据展示',
-  configure: {
-    supports: {
-      style: true,
-      events: []
-    },
-    props: [{
-      name: 'children',
-      title: {
-        label: '文案',
-        tip: '自定义分割线文本内容'
-      },
-      setter: 'StringSetter',
-      supportVariable: true
-    }, {
-      name: 'dashed',
-      title: {
-        label: '是否虚线',
-        tip: '是否虚线'
-      },
-      setter: 'BoolSetter'
-    }, {
-      name: 'content-position',
-      title: {
-        label: '分割线内容的位置',
-        tip: '分割线内容的位置'
-      },
-      setter: {
-        componentName: 'RadioGroupSetter',
-        props: {
-          options: [{
-            title: 'left',
-            value: 'left'
-          }, {
-            title: 'right',
-            value: 'right'
-          }, {
-            title: 'center',
-            value: 'center'
-          }]
-        }
-      },
-      defaultValue: 'center'
-    }, {
-      name: 'border-style',
-      title: {
-        label: '设置分隔符样式',
-        tip: '设置分隔符样式'
-      },
-      setter: {
-        componentName: 'RadioGroupSetter',
-        props: {
-          options: [{
-            title: 'none',
-            value: 'none'
-          }, {
-            title: 'solid',
-            value: 'solid'
-          }, {
-            title: 'hidden',
-            value: 'hidden'
-          }, {
-            title: 'dashed',
-            value: 'dashed'
-          }]
-        }
-      },
-      defaultValue: 'solid'
-    }, {
-      name: 'direction',
-      title: {
-        label: '方向',
-        tip: '水平还是垂直方向'
-      },
-      setter: {
-        componentName: 'RadioGroupSetter',
-        props: {
-          options: [{
-            title: '水平',
-            value: 'horizontal'
-          }, {
-            title: '垂直',
-            value: 'vertical'
-          }]
-        }
-      },
-      defaultValue: 'horizontal'
-    }]
-  },
-  snippets: [{
-    title: '分割线',
-    schema: {
-      componentName: 'ADivider',
-      props: {
-        plain: false,
-        direction: 'horizontal'
-      }
-    }
-  }, {
-    title: '带文字分割线',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/divider-2.png',
-    schema: {
-      componentName: 'ADivider',
-      props: {
-        children: [{
-          componentName: 'ATypographyText',
-          props: {
-            children: '分割文字'
-          }
-        }]
-      }
-    }
-  }]
-};
-/* harmony default export */ var divider_meta = (divider_meta_meta);
 ;// CONCATENATED MODULE: ./src/lowcode/drawer/meta.ts
 /* harmony default export */ var drawer_meta = ({
   group: 'Antd',
@@ -45502,6 +45391,173 @@ const divider_meta_meta = {
     }
   }]
 });
+;// CONCATENATED MODULE: ./src/lowcode/empty/meta.ts
+/* harmony default export */ var empty_meta = ({
+  group: 'Antd',
+  componentName: 'AEmpty',
+  title: '空状态',
+  category: '数据展示',
+  npm: {
+    destructuring: true,
+    componentName: 'AEmpty'
+  },
+  props: [{
+    name: 'description',
+    title: {
+      label: '内容描述',
+      tip: '自定义描述内容'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'image',
+    title: {
+      label: '图片地址',
+      tip: '设置显示图片，为string时表示自定义图片地址。'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }],
+  configure: {
+    supports: {
+      style: true
+    }
+  },
+  snippets: [{
+    title: "空状态",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/empty-1.png",
+    schema: {
+      componentName: "AEmpty",
+      props: {}
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/divider/meta.ts
+/* eslint-disable */
+// @ts-ignore
+const divider_meta_meta = {
+  group: 'Antd',
+  componentName: 'ADivider',
+  title: '分割线',
+  category: '数据展示',
+  configure: {
+    supports: {
+      style: true,
+      events: []
+    },
+    props: [{
+      name: 'children',
+      title: {
+        label: '文案',
+        tip: '自定义分割线文本内容'
+      },
+      setter: 'StringSetter',
+      supportVariable: true
+    }, {
+      name: 'dashed',
+      title: {
+        label: '是否虚线',
+        tip: '是否虚线'
+      },
+      setter: 'BoolSetter'
+    }, {
+      name: 'content-position',
+      title: {
+        label: '分割线内容的位置',
+        tip: '分割线内容的位置'
+      },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [{
+            title: 'left',
+            value: 'left'
+          }, {
+            title: 'right',
+            value: 'right'
+          }, {
+            title: 'center',
+            value: 'center'
+          }]
+        }
+      },
+      defaultValue: 'center'
+    }, {
+      name: 'border-style',
+      title: {
+        label: '设置分隔符样式',
+        tip: '设置分隔符样式'
+      },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [{
+            title: 'none',
+            value: 'none'
+          }, {
+            title: 'solid',
+            value: 'solid'
+          }, {
+            title: 'hidden',
+            value: 'hidden'
+          }, {
+            title: 'dashed',
+            value: 'dashed'
+          }]
+        }
+      },
+      defaultValue: 'solid'
+    }, {
+      name: 'direction',
+      title: {
+        label: '方向',
+        tip: '水平还是垂直方向'
+      },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [{
+            title: '水平',
+            value: 'horizontal'
+          }, {
+            title: '垂直',
+            value: 'vertical'
+          }]
+        }
+      },
+      defaultValue: 'horizontal'
+    }]
+  },
+  snippets: [{
+    title: '分割线',
+    schema: {
+      componentName: 'ADivider',
+      props: {
+        plain: false,
+        direction: 'horizontal'
+      }
+    }
+  }, {
+    title: '带文字分割线',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/divider-2.png',
+    schema: {
+      componentName: 'ADivider',
+      props: {
+        children: [{
+          componentName: 'ATypographyText',
+          props: {
+            children: '分割文字'
+          }
+        }]
+      }
+    }
+  }]
+};
+/* harmony default export */ var divider_meta = (divider_meta_meta);
 ;// CONCATENATED MODULE: ./src/lowcode/dropdown/meta.ts
 /* harmony default export */ var dropdown_meta = ({
   group: 'Antd',
@@ -45705,51 +45761,6 @@ const divider_meta_meta = {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/empty/meta.ts
-/* harmony default export */ var empty_meta = ({
-  group: 'Antd',
-  componentName: 'AEmpty',
-  title: '空状态',
-  category: '数据展示',
-  npm: {
-    destructuring: true,
-    componentName: 'AEmpty'
-  },
-  props: [{
-    name: 'description',
-    title: {
-      label: '内容描述',
-      tip: '自定义描述内容'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'image',
-    title: {
-      label: '图片地址',
-      tip: '设置显示图片，为string时表示自定义图片地址。'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }],
-  configure: {
-    supports: {
-      style: true
-    }
-  },
-  snippets: [{
-    title: "空状态",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/empty-1.png",
-    schema: {
-      componentName: "AEmpty",
-      props: {}
-    }
-  }]
-});
 ;// CONCATENATED MODULE: ./src/lowcode/form/meta.ts
 /* eslint-disable */
 
@@ -45767,7 +45778,7 @@ const divider_meta_meta = {
     name: 'ref',
     title: {
       label: 'ref',
-      tip: 'ref | 通过 this.$(\'xxx\') 获取到组件实例'
+      tip: 'ref | 通过 this.$refs[\'xxx\'] 获取到组件实例'
     },
     defaultValue: () => {
       return `form_${uuid()}`;
@@ -45775,10 +45786,19 @@ const divider_meta_meta = {
     setter: 'StringSetter',
     supportVariable: true
   }, {
-    name: 'values',
+    name: 'model',
     title: {
-      label: '表单数据源',
-      tip: '表单数据源'
+      label: '表单数据对象',
+      tip: '表单数据对象'
+    },
+    propType: 'object',
+    setter: 'JsonSetter',
+    supportVariable: true
+  }, {
+    name: 'rules',
+    title: {
+      label: '表单验证规则',
+      tip: '表单验证规则'
     },
     propType: 'object',
     setter: 'JsonSetter',
@@ -45932,17 +45952,19 @@ const divider_meta_meta = {
     propType: 'string',
     setter: 'StringSetter',
     supportVariable: true
-  }, {
-    name: 'preserve',
-    title: {
-      label: '删除时保留值',
-      tip: '当字段被删除时保留字段值'
-    },
-    propType: 'bool',
-    defaultValue: true,
-    setter: 'BoolSetter',
-    supportVariable: true
-  }, {
+  },
+  // {
+  //   name: 'validateOnRuleChange',
+  //   title: {
+  //     label: 'rules改变触发验证',
+  //     tip: '是否在 rules 属性改变后立即触发一次验证',
+  //   },
+  //   propType: 'bool',
+  //   defaultValue: true,
+  //   setter: 'BoolSetter',
+  //   supportVariable: true
+  // },
+  {
     name: 'scrollToFirstError',
     title: {
       label: '滚至错误',
@@ -46015,31 +46037,31 @@ const divider_meta_meta = {
         }
       }
     }, {
-      name: 'onFinish',
+      name: 'onClearValidate',
       title: {
-        label: '提交表单且数据验证成功后回调事件',
-        tip: '提交表单且数据验证成功后回调事件'
+        label: '移除表单项的校验结果',
+        tip: '移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果'
       },
       propType: 'func'
     }, {
-      name: 'onFinishFailed',
+      name: 'onResetFields',
       title: {
-        label: '提交表单且数据验证失败后回调事件',
-        tip: '提交表单且数据验证失败后回调事件'
+        label: '重置表单并移除校验结果',
+        tip: '对整个表单进行重置，将所有字段值重置为初始值并移除校验结果'
       },
       propType: 'func'
     }, {
-      name: 'onFieldsChange',
+      name: 'onValidateFields',
       title: {
-        label: '字段更新时触发回调事件',
-        tip: '字段更新时触发回调事件'
+        label: '触发表单验证',
+        tip: '触发表单验证'
       },
       propType: 'func'
     }, {
-      name: 'onValuesChange',
+      name: 'onValidate',
       title: {
-        label: '字段值更新时触发回调事件',
-        tip: '字段值更新时触发回调事件'
+        label: '任一表单项被校验后触发',
+        tip: '任一表单项被校验后触发'
       },
       propType: 'func'
     }]
@@ -46050,18 +46072,31 @@ const divider_meta_meta = {
     },
     supports: {
       style: true,
-      events: [{
+      events: [
+      // {
+      //   name:'onClearValidate',
+      //   template:"onClearValidate(nameList){\n //移除表单项的校验结果\n console.log('onClearValidate',nameList);}"
+      // },
+      // {
+      //   name:'onResetFields',
+      //   template:"onResetFields(nameList){\n // 重置表单并移除校验结果\n console.log('onResetFields',nameList);}"
+      // },
+      // {
+      //   name:'onValidate',
+      //   template:"onValidate(nameList){\n // 触发表单验证\n console.log('onValidate',nameList);}"
+      // },
+      {
         name: 'onFinish',
         template: "onFinish(values,${extParams}){\n// 提交表单且数据验证成功后回调事件\nconsole.log('onFinish',values);}"
       }, {
         name: 'onFinishFailed',
         template: "onFinishFailed({values,errorFields,outOfDate},${extParams}){\n// 提交表单且数据验证失败后回调事件\nconsole.log('onFinishFailed',values, errorFields, outOfDate);}"
       }, {
-        name: 'onFieldsChange',
-        template: "onFieldsChange(changedFields,allFields,${extParams}){\n// 字段更新时触发回调事件\nconsole.log('onFieldsChange',changedFields,allFields);}"
+        name: 'onSubmit',
+        template: "onSubmit(e,${extParams}){\n// 数据验证成功后回调事件\nconsole.log('onSubmit',e);}"
       }, {
-        name: 'onValuesChange',
-        template: "onValuesChange(changedValues,allValues,${extParams}){\n// 字段值更新时触发回调事件\nconsole.log('onValuesChange',changedValues,allValues);}"
+        name: 'onValidate',
+        template: "onValidate(name,status,errorMsgs,${extParams}){\n// 任一表单项被校验后触发\nconsole.log('onValidate',name,status,errorMsgs);}"
       }]
     },
     advanced: {
@@ -46099,11 +46134,14 @@ const divider_meta_meta = {
       props: {
         labelCol: {
           span: 6,
-          labelAlign: 'left'
+          labelAlign: 'right'
         },
-        onValuesChange: {
+        wrapperCol: {
+          span: 14
+        },
+        onValidate: {
           type: "JSFunction",
-          value: "function onValuesChange(changedValues, allValues) {\n  console.log('onValuesChange', changedValues, allValues);\n}"
+          value: "function onValidate(e) {\n  console.log('e', changedValues, allValues);\n}"
         },
         onFinish: {
           type: "JSFunction",
@@ -46113,7 +46151,11 @@ const divider_meta_meta = {
           type: "JSFunction",
           value: "function onFinishFailed({ values, errorFields, outOfDate }) {\n  console.log('onFinishFailed', values, errorFields, outOfDate);\n}"
         },
-        "name": "basic"
+        onSubmit: {
+          type: "JSFunction",
+          value: "function onSubmit(e){\n console.log('onSubmit',e);\n}"
+        },
+        name: "basic"
       },
       children: [{
         componentName: 'AFormItem',
@@ -46147,7 +46189,9 @@ const divider_meta_meta = {
           props: {
             name: 'userName',
             size: 'default',
-            placeholder: '用户名'
+            bordered: true,
+            disabled: false,
+            placeholder: '请输入用户名'
           }
         }]
       }, {
@@ -46158,7 +46202,7 @@ const divider_meta_meta = {
           colon: true,
           required: true,
           noStyle: false,
-          valuePropName: "password",
+          valuePropName: "value",
           name: 'b',
           requiredobj: {
             required: true,
@@ -46181,8 +46225,10 @@ const divider_meta_meta = {
         children: [{
           componentName: 'AInputPassword',
           props: {
-            name: 'password',
             placeholder: '请输入密码',
+            autoFocus: false,
+            controls: true,
+            bordered: true,
             size: 'medium',
             disabled: false
           }
@@ -46195,7 +46241,7 @@ const divider_meta_meta = {
           labelAlign: 'right',
           colon: true,
           required: false,
-          valuePropName: "shareUnit",
+          valuePropName: "value",
           requiredobj: {
             required: null,
             message: null
@@ -46231,6 +46277,7 @@ const divider_meta_meta = {
               }],
               allowClear: true,
               autoFocus: false,
+              disabled: false,
               filterOption: true,
               optionFilterProp: "value",
               labelInValue: false,
@@ -46244,7 +46291,8 @@ const divider_meta_meta = {
         props: {
           wrapperCol: {
             offset: 7
-          }
+          },
+          name: "d"
         },
         children: [{
           componentName: "ACheckboxGroup",
@@ -46266,7 +46314,42 @@ const divider_meta_meta = {
         props: {
           wrapperCol: {
             offset: 7
+          },
+          name: "e"
+        },
+        children: [{
+          componentName: "ADatePicker",
+          props: {
+            allowClear: true,
+            autoFocus: false,
+            bordered: true,
+            disabled: false
           }
+        }]
+      }, {
+        componentName: 'AFormItem',
+        props: {
+          wrapperCol: {
+            offset: 7
+          },
+          name: "f"
+        },
+        children: [{
+          componentName: "ASwitch",
+          props: {
+            allowClear: true,
+            autoFocus: false,
+            bordered: true,
+            disabled: false
+          }
+        }]
+      }, {
+        componentName: 'AFormItem',
+        props: {
+          wrapperCol: {
+            offset: 7
+          },
+          name: "g"
         },
         children: [{
           componentName: 'AButton',
@@ -46281,8 +46364,8 @@ const divider_meta_meta = {
             style: {
               marginLeft: '10px'
             },
-            children: '重置',
-            htmlType: "reset"
+            children: '取消',
+            htmlType: "text"
           }
         }]
       }]
@@ -46310,14 +46393,14 @@ const divider_meta_meta = {
     supportVariable: true
   }, {
     name: 'label',
-    title: '标签名',
+    title: '标签',
     propType: {
       type: 'oneOfType',
       value: ['string', 'node']
     }
   }, {
     name: 'labelAlign',
-    title: '标签文本对齐方式',
+    title: '标签对齐',
     propType: {
       type: 'oneOf',
       value: ['left', 'right']
@@ -46326,38 +46409,32 @@ const divider_meta_meta = {
       componentName: 'RadioGroupSetter',
       props: {
         options: [{
-          title: 'left',
+          title: '左',
           value: 'left'
         }, {
-          title: 'right',
+          title: '右',
           value: 'right'
         }]
       }
     },
     defaultValue: 'right'
   }, {
-    name: 'autoLink',
-    title: '是否自动关联表单域',
-    propType: 'bool',
-    defaultValue: true,
-    setter: 'BoolSetter'
-  }, {
     name: 'colon',
-    title: '是否显示 label 后面的冒号',
+    title: '展示冒号',
     propType: 'bool',
     defaultValue: true,
     setter: 'BoolSetter',
     supportVariable: true
   }, {
     name: 'extra',
-    title: '额外的提示信息',
+    title: '提示信息',
     propType: {
       type: 'oneOfType',
       value: ['string', 'node']
     }
   }, {
     name: 'required',
-    title: '是否必填',
+    title: '必填',
     propType: 'bool',
     setter: 'BoolSetter',
     defaultValue: false
@@ -46371,6 +46448,12 @@ const divider_meta_meta = {
     setter: 'StringSetter',
     supportVariable: true
   }, {
+    name: 'autoLink',
+    title: '是否自动关联表单域',
+    propType: 'bool',
+    defaultValue: true,
+    setter: 'BoolSetter'
+  }, {
     name: 'noStyle',
     title: {
       label: '隐藏标签',
@@ -46380,23 +46463,6 @@ const divider_meta_meta = {
     defaultValue: false,
     setter: 'BoolSetter',
     supportVariable: true
-  }, {
-    name: 'valuePropName',
-    title: {
-      label: '子组件值字段',
-      tip: `子节点的值的字段，如 Switch 的是 'checked'`
-    },
-    propType: 'string',
-    defaultValue: 'value',
-    setter: 'StringSetter',
-    supportVariable: true
-  }, {
-    name: 'getValueFromEvent',
-    title: {
-      label: 'event转换器',
-      tip: `设置如何将 event 的值转换成字段值，如将上传组件的fileList作为value值传出`
-    },
-    propType: 'func'
   }, {
     name: 'hasFeedback',
     title: {
@@ -46548,12 +46614,10 @@ const divider_meta_meta = {
             options: [{
               title: '字符串',
               value: 'string'
-            },
-            // {
-            //   title: '纯数字',
-            //   value: 'number',
-            // },
-            {
+            }, {
+              title: '纯数字',
+              value: 'number'
+            }, {
               title: '邮箱',
               value: 'email'
             }, {
@@ -46621,16 +46685,21 @@ const divider_meta_meta = {
       tip: '自定义校验，接收 Promise 作为返回值'
     },
     propType: 'func'
-  }, {
-    name: 'validateFirst',
-    title: {
-      label: 'validateFirst',
-      tip: '当某一规则校验不通过时，是否停止剩下的规则的校验'
-    },
-    prop: 'bool',
-    setter: 'BoolSetter',
-    defaultValue: false
-  }, {
+  },
+  // {
+  //   name: 'validateTrigger',
+  //   title: { label: '校验时机', tip: '设置字段校验的时机' },
+  //   propType: { type: 'oneOfType', value: ['string', 'array'] },
+  //   defaultValue: 'onChange'
+  // }
+  // {
+  //   name: 'validateFirst',
+  //   title: { label: 'validateFirst', tip: '当某一规则校验不通过时，是否停止剩下的规则的校验' },
+  //   prop: 'bool',
+  //   setter: 'BoolSetter',
+  //   defaultValue: false
+  // },
+  {
     name: 'validateStatus',
     title: {
       label: 'validateStatus',
@@ -46641,17 +46710,6 @@ const divider_meta_meta = {
       value: ['success', 'warning', 'error', 'validating']
     },
     defaultValue: 'error'
-  }, {
-    name: 'validateTrigger',
-    title: {
-      label: 'validateTrigger',
-      tip: '设置字段校验的时机'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'array']
-    },
-    defaultValue: 'change'
   }],
   configure: {
     component: {
@@ -46687,7 +46745,8 @@ const divider_meta_meta = {
     schema: {
       componentName: 'AFormItem',
       props: {
-        label: '表单项'
+        label: '表单项',
+        validateStatus: 'error'
       }
     }
   }]
@@ -46856,183 +46915,6 @@ function clamp(value, min, max) {
     }
   },
   snippets: []
-});
-;// CONCATENATED MODULE: ./src/lowcode/grid-row/meta.ts
-/* harmony default export */ var grid_row_meta = ({
-  componentName: 'ARow',
-  title: '栅格-行',
-  props: [{
-    name: 'align',
-    title: {
-      label: '垂直对齐方式',
-      tip: '垂直对齐方式'
-    },
-    propType: {
-      type: 'oneOf',
-      value: ['top', 'middle', 'bottom']
-    }
-  }, {
-    name: 'gutter',
-    title: {
-      label: '间隔',
-      tip: '栅格间隔，单位为像素(px)'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['object', {
-        type: 'arrayOf',
-        value: 'number'
-      }, 'number']
-    },
-    defaultValue: {
-      xs: 8,
-      sm: 16,
-      md: 24
-    },
-    extraProps: {
-      getValue(target) {
-        const {
-          node
-        } = target;
-        const gutter = node.getPropValue('gutter');
-        if (typeof gutter === 'number') {
-          return gutter;
-        } else if (Array.isArray(gutter)) {
-          return gutter[0];
-        }
-        return 0;
-      },
-      setValue(target, value) {
-        const {
-          node
-        } = target;
-        const gutter = node.getPropValue('gutter');
-        if (Array.isArray(gutter)) {
-          gutter[0] = value;
-          node.setPropValue('gutter', gutter);
-        } else {
-          node.setPropValue('gutter', [value, 0]);
-        }
-      }
-    }
-  }, {
-    name: 'justify',
-    title: {
-      label: '水平排列方式',
-      tip: '水平排列方式'
-    },
-    propType: {
-      type: 'oneOf',
-      value: ['start', 'end', 'center', 'space-around', 'space-between']
-    }
-  }, {
-    name: 'wrap',
-    title: {
-      label: '自动换行',
-      tip: '是否自动换行'
-    },
-    propType: 'bool',
-    defaultValue: true
-  }],
-  configure: {
-    component: {
-      isContainer: true,
-      nestingRule: {
-        childWhitelist: ['ACol']
-      }
-    },
-    supports: {
-      style: true
-    }
-  },
-  snippets: [{
-    title: '栅格-两栏',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1.png',
-    schema: {
-      componentName: 'ARow',
-      props: {},
-      children: [{
-        componentName: 'ACol',
-        props: {
-          span: 12
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 12
-        }
-      }]
-    }
-  }, {
-    title: '栅格-三栏',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1.png',
-    schema: {
-      componentName: 'ARow',
-      props: {},
-      children: [{
-        componentName: 'ACol',
-        props: {
-          span: 8
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 8
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 8
-        }
-      }]
-    }
-  }, {
-    title: '栅格-四栏',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1-1.png',
-    schema: {
-      componentName: 'ARow',
-      props: {},
-      children: [{
-        componentName: 'ACol',
-        props: {
-          span: 6
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 6
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 6
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 6
-        }
-      }]
-    }
-  }, {
-    title: '栅格-1:3',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-3.png',
-    schema: {
-      componentName: 'ARow',
-      props: {},
-      children: [{
-        componentName: 'ACol',
-        props: {
-          span: 6
-        }
-      }, {
-        componentName: 'ACol',
-        props: {
-          span: 18
-        }
-      }]
-    }
-  }]
 });
 ;// CONCATENATED MODULE: external "Vue"
 var external_Vue_namespaceObject = Vue;
@@ -64992,6 +64874,7 @@ function getAntdIconList() {
 function getIconList() {
   const iconfontIconList = getIconfontIconList();
   const antdIconList = getAntdIconList();
+  console.log('iconList', iconfontIconList, 'antdIconList', antdIconList);
   return [...antdIconList, ...iconfontIconList];
 }
 const antd_icon_setter_Icon = props => {
@@ -65045,9 +64928,7 @@ const AntdIconSetter = props => {
     const icons = {};
     iconList.forEach(item => {
       const {
-        group,
-        name,
-        icon
+        group
       } = item;
       if (groups.every(item => item.group !== group)) {
         groups.push({
@@ -65232,6 +65113,183 @@ AntdIconSetter.defaultProps = {
         type: 'SmileOutlined',
         size: 20
       }
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/grid-row/meta.ts
+/* harmony default export */ var grid_row_meta = ({
+  componentName: 'ARow',
+  title: '栅格-行',
+  props: [{
+    name: 'align',
+    title: {
+      label: '垂直对齐方式',
+      tip: '垂直对齐方式'
+    },
+    propType: {
+      type: 'oneOf',
+      value: ['top', 'middle', 'bottom']
+    }
+  }, {
+    name: 'gutter',
+    title: {
+      label: '间隔',
+      tip: '栅格间隔，单位为像素(px)'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['object', {
+        type: 'arrayOf',
+        value: 'number'
+      }, 'number']
+    },
+    defaultValue: {
+      xs: 8,
+      sm: 16,
+      md: 24
+    },
+    extraProps: {
+      getValue(target) {
+        const {
+          node
+        } = target;
+        const gutter = node.getPropValue('gutter');
+        if (typeof gutter === 'number') {
+          return gutter;
+        } else if (Array.isArray(gutter)) {
+          return gutter[0];
+        }
+        return 0;
+      },
+      setValue(target, value) {
+        const {
+          node
+        } = target;
+        const gutter = node.getPropValue('gutter');
+        if (Array.isArray(gutter)) {
+          gutter[0] = value;
+          node.setPropValue('gutter', gutter);
+        } else {
+          node.setPropValue('gutter', [value, 0]);
+        }
+      }
+    }
+  }, {
+    name: 'justify',
+    title: {
+      label: '水平排列方式',
+      tip: '水平排列方式'
+    },
+    propType: {
+      type: 'oneOf',
+      value: ['start', 'end', 'center', 'space-around', 'space-between']
+    }
+  }, {
+    name: 'wrap',
+    title: {
+      label: '自动换行',
+      tip: '是否自动换行'
+    },
+    propType: 'bool',
+    defaultValue: true
+  }],
+  configure: {
+    component: {
+      isContainer: true,
+      nestingRule: {
+        childWhitelist: ['ACol']
+      }
+    },
+    supports: {
+      style: true
+    }
+  },
+  snippets: [{
+    title: '栅格-两栏',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1.png',
+    schema: {
+      componentName: 'ARow',
+      props: {},
+      children: [{
+        componentName: 'ACol',
+        props: {
+          span: 12
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 12
+        }
+      }]
+    }
+  }, {
+    title: '栅格-三栏',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1.png',
+    schema: {
+      componentName: 'ARow',
+      props: {},
+      children: [{
+        componentName: 'ACol',
+        props: {
+          span: 8
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 8
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 8
+        }
+      }]
+    }
+  }, {
+    title: '栅格-四栏',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1-1.png',
+    schema: {
+      componentName: 'ARow',
+      props: {},
+      children: [{
+        componentName: 'ACol',
+        props: {
+          span: 6
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 6
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 6
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 6
+        }
+      }]
+    }
+  }, {
+    title: '栅格-1:3',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-3.png',
+    schema: {
+      componentName: 'ARow',
+      props: {},
+      children: [{
+        componentName: 'ACol',
+        props: {
+          span: 6
+        }
+      }, {
+        componentName: 'ACol',
+        props: {
+          span: 18
+        }
+      }]
     }
   }]
 });
@@ -65882,6 +65940,7 @@ AntdIconSetter.defaultProps = {
   },
   snippets: [{
     title: '数字输入框',
+    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-number-1.png',
     schema: {
       componentName: 'AInputNumber',
       props: {
@@ -66836,10 +66895,7 @@ AntdIconSetter.defaultProps = {
             children: {
               componentName: 'ATypographyText',
               props: {
-                children: {
-                  type: 'JSExpression',
-                  value: 'this.item.text'
-                }
+                children: "oh my god"
               }
             }
           }]
@@ -66910,6 +66966,9 @@ AntdIconSetter.defaultProps = {
     }]
   }],
   configure: {
+    component: {
+      isComponent: true
+    },
     supports: {
       style: true,
       events: [{
@@ -66949,10 +67008,7 @@ AntdIconSetter.defaultProps = {
             children: {
               componentName: 'ATypographyText',
               props: {
-                children: {
-                  type: 'JSExpression',
-                  value: 'this.item.text'
-                }
+                children: "文本"
               }
             }
           }]
@@ -67086,59 +67142,6 @@ AntdIconSetter.defaultProps = {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/list-item-meta/meta.ts
-/* harmony default export */ var list_item_meta_meta = ({
-  group: 'Antd',
-  componentName: 'AListItemMeta',
-  title: '列表项内容',
-  category: '数据展示',
-  npm: {
-    destructuring: true,
-    componentName: 'AListItemMeta'
-  },
-  props: [{
-    name: 'avatar',
-    title: {
-      label: '列表元素图标',
-      tip: '列表元素的图标'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'title',
-    title: {
-      label: '列表元素标题',
-      tip: '列表元素的标题'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'avatar',
-    title: {
-      label: '列表元素描述内容',
-      tip: '列表元素的描述内容'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }],
-  configure: {
-    component: {
-      isContainer: true,
-      nestingRule: {
-        parentWhitelist: ['AList', 'AListItem']
-      }
-    },
-    supports: {
-      style: true
-    }
-  }
-});
 ;// CONCATENATED MODULE: ./src/lowcode/list-item/meta.ts
 /* harmony default export */ var list_item_meta = ({
   group: 'Antd',
@@ -67186,6 +67189,59 @@ AntdIconSetter.defaultProps = {
       isContainer: true,
       nestingRule: {
         parentWhitelist: ['AList']
+      }
+    },
+    supports: {
+      style: true
+    }
+  }
+});
+;// CONCATENATED MODULE: ./src/lowcode/list-item-meta/meta.ts
+/* harmony default export */ var list_item_meta_meta = ({
+  group: 'Antd',
+  componentName: 'AListItemMeta',
+  title: '列表项内容',
+  category: '数据展示',
+  npm: {
+    destructuring: true,
+    componentName: 'AListItemMeta'
+  },
+  props: [{
+    name: 'avatar',
+    title: {
+      label: '列表元素图标',
+      tip: '列表元素的图标'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'title',
+    title: {
+      label: '列表元素标题',
+      tip: '列表元素的标题'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'avatar',
+    title: {
+      label: '列表元素描述内容',
+      tip: '列表元素的描述内容'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }],
+  configure: {
+    component: {
+      isContainer: true,
+      nestingRule: {
+        parentWhitelist: ['AList', 'AListItem']
       }
     },
     supports: {
@@ -67365,81 +67421,6 @@ AntdIconSetter.defaultProps = {
       props: {}
     }
   }]
-});
-;// CONCATENATED MODULE: ./src/lowcode/menu-item/meta.ts
-/* harmony default export */ var menu_item_meta = ({
-  group: 'Antd',
-  componentName: 'AMenuItem',
-  title: '菜单项',
-  category: '基础组件',
-  npm: {
-    destructuring: true,
-    componentName: 'AMenuItem'
-  },
-  props: [{
-    name: 'children',
-    title: {
-      label: '内容',
-      tip: '内容'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    }
-  }, {
-    name: 'danger',
-    title: {
-      label: '错误状态',
-      tip: '展示错误状态样式'
-    },
-    propType: 'bool',
-    defaultValue: false
-  }, {
-    name: 'disabled',
-    title: {
-      label: '是否禁用',
-      tip: '是否为禁用状态'
-    },
-    propType: 'bool',
-    defaultValue: false
-  }, {
-    name: 'icon',
-    title: {
-      label: '菜单图标',
-      tip: '菜单图标'
-    },
-    propType: {
-      type: 'oneOfType',
-      value: ['string', 'node']
-    },
-    defaultValue: false
-  }, {
-    name: 'key',
-    title: {
-      label: '唯一标志',
-      tip: 'item 的唯一标志'
-    },
-    propType: 'string'
-  }, {
-    name: 'title',
-    title: {
-      label: '悬浮标题',
-      tip: '设置收缩时展示的悬浮标题'
-    },
-    propType: 'string'
-  }],
-  configure: {
-    component: {
-      isContainer: true,
-      nestingRule: {
-        parentWhitelist: ['AMenu']
-      }
-    },
-    supports: {
-      style: true
-    }
-  },
-  snippets: []
 });
 ;// CONCATENATED MODULE: ./src/lowcode/menu/util.ts
 
@@ -67802,6 +67783,81 @@ const itemsExtraProps = {
       }
     }
   }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/menu-item/meta.ts
+/* harmony default export */ var menu_item_meta = ({
+  group: 'Antd',
+  componentName: 'AMenuItem',
+  title: '菜单项',
+  category: '基础组件',
+  npm: {
+    destructuring: true,
+    componentName: 'AMenuItem'
+  },
+  props: [{
+    name: 'children',
+    title: {
+      label: '内容',
+      tip: '内容'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    }
+  }, {
+    name: 'danger',
+    title: {
+      label: '错误状态',
+      tip: '展示错误状态样式'
+    },
+    propType: 'bool',
+    defaultValue: false
+  }, {
+    name: 'disabled',
+    title: {
+      label: '是否禁用',
+      tip: '是否为禁用状态'
+    },
+    propType: 'bool',
+    defaultValue: false
+  }, {
+    name: 'icon',
+    title: {
+      label: '菜单图标',
+      tip: '菜单图标'
+    },
+    propType: {
+      type: 'oneOfType',
+      value: ['string', 'node']
+    },
+    defaultValue: false
+  }, {
+    name: 'key',
+    title: {
+      label: '唯一标志',
+      tip: 'item 的唯一标志'
+    },
+    propType: 'string'
+  }, {
+    name: 'title',
+    title: {
+      label: '悬浮标题',
+      tip: '设置收缩时展示的悬浮标题'
+    },
+    propType: 'string'
+  }],
+  configure: {
+    component: {
+      isContainer: true,
+      nestingRule: {
+        parentWhitelist: ['AMenu']
+      }
+    },
+    supports: {
+      style: true
+    }
+  },
+  snippets: []
 });
 ;// CONCATENATED MODULE: ./src/lowcode/menu-item-group/meta.ts
 
@@ -68917,7 +68973,10 @@ const itemsExtraProps = {
       style: true,
       events: [{
         name: 'onConfirm',
-        template: "onConfirm(${extParams}){\n// 点击确认的回调\nconsole.log('onConfirm');}"
+        template: "onConfirm(${extParams}){\n// 点击确认的回调\nwindow.LowcodeMaterialAntVue.message.success('点击确定');}"
+      }, {
+        name: 'onCancel',
+        template: "onCancel(${extParams}){\n // 点击取消的回调\n window.LowcodeMaterialAntVue.message.error('点击取消');}"
       }]
     }
   },
@@ -70368,19 +70427,22 @@ const itemsExtraProps = {
       }
     },
     defaultValue: 'default'
-  }, {
-    title: '是否展开菜单',
-    name: 'open',
-    propType: 'bool',
-    setter: 'BoolSetter',
-    defaultValue: false
-  }, {
-    title: '是否默认展开下拉菜单',
-    name: 'defaultOpen',
-    propType: 'bool',
-    setter: 'BoolSetter',
-    defaultValue: false
-  }, {
+  },
+  // {
+  //   title:'是否展开菜单',
+  //   name:'open',
+  //   propType:'bool',
+  //   setter:'BoolSetter',
+  //   defaultValue:false
+  // },
+  // {
+  //   title:'是否默认展开下拉菜单',
+  //   name:'defaultOpen',
+  //   propType:'bool',
+  //   setter:'BoolSetter',
+  //   defaultValue:false
+  // },
+  {
     title: {
       label: '模式',
       tip: '模式为多选或标签'
@@ -70437,7 +70499,10 @@ const itemsExtraProps = {
       label: '自定义下拉框',
       tip: 'dropdownRender|自定义下拉框内容'
     },
-    propType: 'node',
+    propType: {
+      type: 'oneOfType',
+      value: ['node', 'func']
+    },
     setter: [{
       componentName: 'SlotSetter',
       title: '自定义下拉框',
@@ -70445,6 +70510,11 @@ const itemsExtraProps = {
         type: 'JSSlot',
         params: ['menuNode'],
         value: []
+      }
+    }, {
+      componentName: 'FunctionSetter',
+      props: {
+        template: 'dropdownRender(menuNode,props,${extParams}){\n// 自定义下拉框内容\nconsole.log("dropdownRender menuNode",menuNode,"props",props)\n}'
       }
     }]
   }, {
@@ -70749,8 +70819,8 @@ const itemsExtraProps = {
 /* harmony default export */ var slider_meta = ({
   group: 'Antd',
   componentName: 'ASlider',
-  title: '滑块',
-  category: '基础组件',
+  title: '滑块(滑动输入条)',
+  category: '表单',
   npm: {
     destructuring: true,
     componentName: 'ASlider'
@@ -70888,7 +70958,7 @@ const itemsExtraProps = {
     }
   },
   snippets: [{
-    title: "滑块",
+    title: "滑块(滑动输入条)",
     screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/slider-1.png",
     schema: {
       componentName: "ASlider",
@@ -71046,84 +71116,6 @@ const itemsExtraProps = {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/spin/meta.ts
-/* harmony default export */ var spin_meta = ({
-  group: 'Antd',
-  componentName: "ASpin",
-  title: '加载中',
-  category: '反馈',
-  npm: {
-    destructuring: true,
-    componentName: 'ASpin'
-  },
-  props: [{
-    name: 'delay',
-    title: {
-      label: '延迟显示',
-      tip: '延迟显示加载效果的时间（防止闪烁）'
-    },
-    propType: 'number'
-  }, {
-    name: 'indicator',
-    title: {
-      label: '加载指示符',
-      tip: '加载指示符'
-    },
-    propType: 'node'
-  }, {
-    name: 'size',
-    title: {
-      label: '尺寸',
-      tip: '组件大小'
-    },
-    propType: {
-      type: 'oneOf',
-      value: ['small', 'default', 'large']
-    },
-    defaultValue: 'default'
-  }, {
-    name: 'spinning',
-    title: {
-      label: '加载状态',
-      tip: '是否为加载中状态'
-    },
-    propType: 'bool',
-    defaultValue: true
-  }, {
-    name: 'tip',
-    title: {
-      label: '描述文案',
-      tip: '当作为包裹元素时，可以自定义描述文案'
-    },
-    propType: 'string'
-  }, {
-    name: 'wrapperClassName',
-    title: {
-      label: '包装器的类属性',
-      tip: '包装器的类属性'
-    },
-    propType: 'string'
-  }],
-  configure: {
-    component: {
-      isContainer: true
-    },
-    supports: {
-      style: true
-    }
-  },
-  snippets: [{
-    title: "加载中",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/spin-1.png",
-    schema: {
-      componentName: 'ASpin',
-      props: {
-        size: "large",
-        tip: "loading..."
-      }
-    }
-  }]
-});
 ;// CONCATENATED MODULE: ./src/lowcode/statistic/meta.ts
 /* harmony default export */ var statistic_meta = ({
   group: 'Antd',
@@ -71223,6 +71215,84 @@ const itemsExtraProps = {
       props: {
         title: 'Active Users',
         value: 16589
+      }
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/spin/meta.ts
+/* harmony default export */ var spin_meta = ({
+  group: 'Antd',
+  componentName: "ASpin",
+  title: '加载中',
+  category: '反馈',
+  npm: {
+    destructuring: true,
+    componentName: 'ASpin'
+  },
+  props: [{
+    name: 'delay',
+    title: {
+      label: '延迟显示',
+      tip: '延迟显示加载效果的时间（防止闪烁）'
+    },
+    propType: 'number'
+  }, {
+    name: 'indicator',
+    title: {
+      label: '加载指示符',
+      tip: '加载指示符'
+    },
+    propType: 'node'
+  }, {
+    name: 'size',
+    title: {
+      label: '尺寸',
+      tip: '组件大小'
+    },
+    propType: {
+      type: 'oneOf',
+      value: ['small', 'default', 'large']
+    },
+    defaultValue: 'default'
+  }, {
+    name: 'spinning',
+    title: {
+      label: '加载状态',
+      tip: '是否为加载中状态'
+    },
+    propType: 'bool',
+    defaultValue: true
+  }, {
+    name: 'tip',
+    title: {
+      label: '描述文案',
+      tip: '当作为包裹元素时，可以自定义描述文案'
+    },
+    propType: 'string'
+  }, {
+    name: 'wrapperClassName',
+    title: {
+      label: '包装器的类属性',
+      tip: '包装器的类属性'
+    },
+    propType: 'string'
+  }],
+  configure: {
+    component: {
+      isContainer: true
+    },
+    supports: {
+      style: true
+    }
+  },
+  snippets: [{
+    title: "加载中",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/spin-1.png",
+    schema: {
+      componentName: 'ASpin',
+      props: {
+        size: "large",
+        tip: "loading..."
       }
     }
   }]
@@ -71518,6 +71588,66 @@ const itemsExtraProps = {
     }
   }]
 });
+;// CONCATENATED MODULE: ./src/lowcode/steps-step/meta.ts
+/* harmony default export */ var steps_step_meta = ({
+  group: 'Antd',
+  componentName: 'AStepsStep',
+  title: '步骤项',
+  props: [{
+    name: 'title',
+    title: {
+      label: '标题',
+      tip: '标题'
+    },
+    propType: 'string'
+  }, {
+    name: 'subTitle',
+    title: {
+      label: '子标题',
+      tip: '子标题'
+    },
+    propType: 'string'
+  }, {
+    name: 'description',
+    title: {
+      label: '步骤描述',
+      tip: '步骤描述'
+    },
+    propType: 'string'
+  }, {
+    name: 'disabled',
+    title: {
+      label: '是否禁用',
+      tip: '是否为禁用状态'
+    },
+    propType: 'bool'
+  }, {
+    name: 'icon',
+    title: {
+      label: '图标',
+      tip: '图标'
+    },
+    propType: 'node'
+  }, {
+    name: 'status',
+    title: {
+      label: '状态',
+      tip: '状态'
+    },
+    propType: 'string'
+  }],
+  configure: {
+    component: {
+      nestingRule: {
+        parentWhitelist: ['ASteps']
+      }
+    },
+    supports: {
+      style: true
+    }
+  },
+  snippets: []
+});
 ;// CONCATENATED MODULE: ./src/lowcode/switch/meta.ts
 /* eslint-disable */
 // @ts-ignore
@@ -71699,66 +71829,6 @@ const itemsExtraProps = {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/steps-step/meta.ts
-/* harmony default export */ var steps_step_meta = ({
-  group: 'Antd',
-  componentName: 'AStepsStep',
-  title: '步骤项',
-  props: [{
-    name: 'title',
-    title: {
-      label: '标题',
-      tip: '标题'
-    },
-    propType: 'string'
-  }, {
-    name: 'subTitle',
-    title: {
-      label: '子标题',
-      tip: '子标题'
-    },
-    propType: 'string'
-  }, {
-    name: 'description',
-    title: {
-      label: '步骤描述',
-      tip: '步骤描述'
-    },
-    propType: 'string'
-  }, {
-    name: 'disabled',
-    title: {
-      label: '是否禁用',
-      tip: '是否为禁用状态'
-    },
-    propType: 'bool'
-  }, {
-    name: 'icon',
-    title: {
-      label: '图标',
-      tip: '图标'
-    },
-    propType: 'node'
-  }, {
-    name: 'status',
-    title: {
-      label: '状态',
-      tip: '状态'
-    },
-    propType: 'string'
-  }],
-  configure: {
-    component: {
-      nestingRule: {
-        parentWhitelist: ['ASteps']
-      }
-    },
-    supports: {
-      style: true
-    }
-  },
-  snippets: []
-});
 ;// CONCATENATED MODULE: ./src/lowcode/table/meta.ts
 /* eslint-disable */
 // @ts-ignore
@@ -71849,14 +71919,20 @@ const itemsExtraProps = {
                     label: '数据字段',
                     tip: 'dataIndex | 数据字段'
                   },
-                  propType: 'string',
-                  setter: 'StringSetter',
+                  propType: {
+                    type: 'oneOfType',
+                    value: ['string', {
+                      type: 'arrayOf',
+                      value: 'string'
+                    }]
+                  },
+                  setter: ['StringSetter', 'ArraySetter'],
                   isRequired: true
                 }, {
                   name: 'key',
                   title: {
                     label: 'key',
-                    tip: 'Vue 需要的 key'
+                    tip: 'Vue 需要的 key,设置了dataIndex可以忽略这个属性'
                   },
                   propType: 'string',
                   setter: 'StringSetter'
@@ -71925,6 +72001,22 @@ const itemsExtraProps = {
                   },
                   setter: ['NumberSetter', 'StringSetter', 'VariableSetter']
                 }, {
+                  name: 'maxWidth',
+                  title: {
+                    label: '最大宽度',
+                    tip: 'maxWidth|最大宽度'
+                  },
+                  propType: 'number',
+                  setter: ['NumberSetter']
+                }, {
+                  name: 'minWidth',
+                  title: {
+                    label: '最小宽度',
+                    tip: 'minWidth|最小宽度'
+                  },
+                  propType: 'number',
+                  setter: ['NumberSetter']
+                }, {
                   name: 'sorter',
                   title: {
                     label: '排序规则',
@@ -71935,6 +72027,56 @@ const itemsExtraProps = {
                     value: ['bool', 'func']
                   },
                   setter: ['BoolSetter', 'FunctionSetter', 'VariableSetter']
+                }, {
+                  name: 'sortDirections',
+                  title: {
+                    label: '排序方式',
+                    tip: 'sortDirections|支持的排序方式'
+                  },
+                  propType: {
+                    type: 'oneOf',
+                    value: ['', 'ascend', 'descend']
+                  },
+                  setter: {
+                    componentName: 'RadioGroupSetter',
+                    props: {
+                      options: [{
+                        title: '不排序',
+                        value: ''
+                      }, {
+                        title: '升序',
+                        value: 'ascend'
+                      }, {
+                        title: '降序',
+                        value: 'descend'
+                      }]
+                    }
+                  }
+                }, {
+                  name: 'sortOrder',
+                  title: {
+                    label: '排序受控属性',
+                    tip: 'sortOrder|排序的受控属性，外界可用此控制列的排序'
+                  },
+                  propType: {
+                    type: 'oneOf',
+                    value: ['', 'ascend', 'descend']
+                  },
+                  setter: {
+                    componentName: 'RadioGroupSetter',
+                    props: {
+                      options: [{
+                        title: '不排序',
+                        value: ''
+                      }, {
+                        title: '升序',
+                        value: 'ascend'
+                      }, {
+                        title: '降序',
+                        value: 'descend'
+                      }]
+                    }
+                  }
                 }, {
                   name: 'ellipsis',
                   title: {
@@ -72433,6 +72575,40 @@ const itemsExtraProps = {
         type: 'JSFunction',
         value: 'target => !!target.getProps().getPropValue("rowSelection")'
       }
+    }, {
+      name: 'rowSelection.onSelect',
+      title: {
+        label: '选择/反选回调',
+        tip: '用户手动选择/取消选择某列的回调'
+      },
+      propType: 'func',
+      setter: [{
+        componentName: 'FunctionSetter',
+        props: {
+          template: 'onSelect(record,${extParams}){\n// 用户手动选择/取消选择某列的回调\nreturn ${record.id};\n}'
+        }
+      }],
+      condition: {
+        type: 'JSFunction',
+        value: 'target => !!target.getProps().getPropValue("rowSelection")'
+      }
+    }, {
+      name: 'rowSelection.onSelectAll',
+      title: {
+        label: '全选/反选回调',
+        tip: '用户手动选择/取消选择所有列的回调'
+      },
+      propType: 'func',
+      setter: [{
+        componentName: 'FunctionSetter',
+        props: {
+          template: 'onSelectAll(record,${extParams}){\n// 用户手动选择/取消选择所有列的回调\nreturn ${record.id};\n}'
+        }
+      }],
+      condition: {
+        type: 'JSFunction',
+        value: 'target => !!target.getProps().getPropValue("rowSelection")'
+      }
     }]
   }, {
     title: '行展开',
@@ -72466,6 +72642,16 @@ const itemsExtraProps = {
       },
       propType: 'bool',
       setter: ['BoolSetter', 'VariableSetter']
+    }, {
+      name: 'expandedRowKeys',
+      title: {
+        label: '展开的行',
+        tip: 'expandedRowKeys|展开的行，控制属性'
+      },
+      propType: {
+        type: 'arrayOf',
+        value: 'string'
+      }
     }, {
       name: 'rowExpandable',
       title: {
@@ -72511,7 +72697,10 @@ const itemsExtraProps = {
         label: '表格尾部',
         tip: 'footer | 表格尾部'
       },
-      propType: 'func',
+      propType: {
+        type: 'oneOfType',
+        value: ['func', 'node']
+      },
       setter: [{
         componentName: 'SlotSetter',
         title: '表格尾部插槽',
@@ -72746,82 +72935,6 @@ const itemsExtraProps = {
     }
   }]
 });
-;// CONCATENATED MODULE: ./src/lowcode/tag/meta.ts
-/* harmony default export */ var tag_meta = ({
-  group: 'Antd',
-  componentName: 'ATag',
-  title: '标签',
-  category: '反馈',
-  npm: {
-    destructuring: true,
-    componentName: 'ATag'
-  },
-  props: [{
-    name: 'children',
-    title: {
-      label: '内容',
-      tip: '内容'
-    },
-    propType: 'string'
-  }, {
-    name: 'closable',
-    title: {
-      label: '可关闭',
-      tip: '标签是否可以关闭'
-    },
-    propType: 'bool',
-    defaultValue: false
-  }, {
-    name: 'color',
-    title: {
-      label: '标签色',
-      tip: '标签色'
-    },
-    propType: 'string'
-  }, {
-    name: 'closeIcon',
-    title: {
-      label: '自定义关闭按钮',
-      tip: '自定义关闭按钮'
-    },
-    propType: 'node'
-  }, {
-    name: 'visible',
-    title: {
-      label: '是否显示标签',
-      tip: '是否显示标签'
-    },
-    propType: 'bool',
-    defaultValue: true
-  }, {
-    name: 'icon',
-    title: {
-      label: '设置图标',
-      tip: '设置图标'
-    },
-    propType: 'node'
-  }],
-  configure: {
-    supports: {
-      style: true,
-      events: [{
-        name: 'onClose',
-        template: "onClose(event,${extParams}){\n// 关闭时的回调\nconsole.log('onClose',event);}"
-      }]
-    }
-  },
-  snippets: [{
-    title: "标签",
-    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tag-1.png",
-    schema: {
-      componentName: "ATag",
-      props: {
-        color: "magenta",
-        children: "标签"
-      }
-    }
-  }]
-});
 ;// CONCATENATED MODULE: ./src/lowcode/time-picker/meta.ts
 /* harmony default export */ var time_picker_meta = ({
   group: 'Antd',
@@ -73028,6 +73141,82 @@ const itemsExtraProps = {
       componentName: "ATimePicker",
       props: {
         showNow: true
+      }
+    }
+  }]
+});
+;// CONCATENATED MODULE: ./src/lowcode/tag/meta.ts
+/* harmony default export */ var tag_meta = ({
+  group: 'Antd',
+  componentName: 'ATag',
+  title: '标签',
+  category: '反馈',
+  npm: {
+    destructuring: true,
+    componentName: 'ATag'
+  },
+  props: [{
+    name: 'children',
+    title: {
+      label: '内容',
+      tip: '内容'
+    },
+    propType: 'string'
+  }, {
+    name: 'closable',
+    title: {
+      label: '可关闭',
+      tip: '标签是否可以关闭'
+    },
+    propType: 'bool',
+    defaultValue: false
+  }, {
+    name: 'color',
+    title: {
+      label: '标签色',
+      tip: '标签色'
+    },
+    propType: 'string'
+  }, {
+    name: 'closeIcon',
+    title: {
+      label: '自定义关闭按钮',
+      tip: '自定义关闭按钮'
+    },
+    propType: 'node'
+  }, {
+    name: 'visible',
+    title: {
+      label: '是否显示标签',
+      tip: '是否显示标签'
+    },
+    propType: 'bool',
+    defaultValue: true
+  }, {
+    name: 'icon',
+    title: {
+      label: '设置图标',
+      tip: '设置图标'
+    },
+    propType: 'node'
+  }],
+  configure: {
+    supports: {
+      style: true,
+      events: [{
+        name: 'onClose',
+        template: "onClose(event,${extParams}){\n// 关闭时的回调\nconsole.log('onClose',event);}"
+      }]
+    }
+  },
+  snippets: [{
+    title: "标签",
+    screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tag-1.png",
+    schema: {
+      componentName: "ATag",
+      props: {
+        color: "magenta",
+        children: "标签"
       }
     }
   }]
@@ -75663,10 +75852,10 @@ const itemsExtraProps = {
 
 const npmInfo = {
   "package": "lowcode-material-ant-vue",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "destructuring": true
 };
-const components = [meta, anchor_link_meta, alert_meta, anchor_meta, auto_complete_meta, avatar_meta, back_top_meta, badge_meta, breadcrumb_meta, button_meta, calendar_meta, card_meta, carousel_meta, cascader_meta, checkbox_meta, checkbox_group_meta, collapse_meta, collapse_pane_meta, comment_meta, date_picker_meta, descriptions_meta, descriptions_item_meta, divider_meta, drawer_meta, dropdown_meta, empty_meta, form_meta, form_item_meta, form_list_meta, grid_col_meta, grid_row_meta, icon_meta, image_meta, input_meta, input_group_meta, input_number_meta, input_password_meta, input_search_meta, input_textarea_meta, list_meta, list_item_meta_meta, list_item_meta, mentions_meta, menu_item_meta, menu_meta, menu_item_group_meta, menu_subMenu_meta, modal_meta, page_header_meta, pagination_meta, popconfirm_meta, popover_meta, progress_meta, radio_meta, radio_group_meta, range_picker_meta, rate_meta, result_meta, select_meta, select_opt_group_meta, select_option_meta, sketelon_meta, slider_meta, slot_meta, space_meta, spin_meta, statistic_meta, steps_meta, switch_meta, tab_pane_meta, steps_step_meta, table_meta, tabs_meta, tag_meta, time_picker_meta, timeline_meta, tooltip_meta, transfer_meta, tree_meta, tree_select_meta, typography_link_meta, typography_paragraph_meta, typography_text_meta, typography_title_meta, upload_meta];
+const components = [meta, anchor_link_meta, affix_meta, auto_complete_meta, alert_meta, avatar_meta, badge_meta, button_meta, back_top_meta, breadcrumb_meta, calendar_meta, card_meta, carousel_meta, cascader_meta, collapse_meta, checkbox_meta, checkbox_group_meta, collapse_pane_meta, comment_meta, date_picker_meta, descriptions_item_meta, descriptions_meta, drawer_meta, empty_meta, divider_meta, dropdown_meta, form_meta, form_item_meta, form_list_meta, grid_col_meta, icon_meta, grid_row_meta, image_meta, input_meta, input_group_meta, input_number_meta, input_password_meta, input_search_meta, input_textarea_meta, list_meta, list_item_meta, list_item_meta_meta, mentions_meta, menu_meta, menu_item_meta, menu_item_group_meta, menu_subMenu_meta, modal_meta, page_header_meta, pagination_meta, popconfirm_meta, popover_meta, progress_meta, radio_meta, radio_group_meta, range_picker_meta, rate_meta, result_meta, select_meta, select_opt_group_meta, select_option_meta, sketelon_meta, slider_meta, slot_meta, space_meta, statistic_meta, spin_meta, steps_meta, steps_step_meta, switch_meta, tab_pane_meta, table_meta, tabs_meta, time_picker_meta, tag_meta, timeline_meta, tooltip_meta, transfer_meta, tree_meta, tree_select_meta, typography_link_meta, typography_paragraph_meta, typography_text_meta, typography_title_meta, upload_meta];
 components.forEach(item => {
   if (!item.npm) {
     item.npm = {
