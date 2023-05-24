@@ -1,25 +1,25 @@
-lc-antd-icon-setter-header-style {
+.lc-antd-icon-setter-header-style {
   width: 100%;
   margin-bottom: 12px;
   display: flex;
 }
-lc-antd-icon-setter-header-style > label {
+.lc-antd-icon-setter-header-style > label {
   flex: 1;
   text-align: center;
 }
-lc-antd-icon-setter-header-search {
+.lc-antd-icon-setter-header-search {
   width: 100%;
   margin-bottom: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid #ddd;
 }
-lc-antd-icon-setter-list {
+.lc-antd-icon-setter-list {
   display: block;
   max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
 }
-lc-antd-icon-setter-list-item {
+.lc-antd-icon-setter-list-item {
   display: inline-block;
   position: relative;
   width: 36px;
@@ -30,7 +30,7 @@ lc-antd-icon-setter-list-item {
   border-radius: 4px;
   transition: background-color 0.2s;
 }
-lc-antd-icon-setter-list-item-name {
+.lc-antd-icon-setter-list-item-name {
   display: none;
   font-size: 14px;
   position: absolute;
@@ -49,10 +49,10 @@ lc-antd-icon-setter-list-item-name {
   transform: translateX(-50%);
   box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
 }
-lc-antd-icon-setter-list-item:hover {
+.lc-antd-icon-setter-list-item:hover {
   background-color: #f1f2f3;
 }
-lc-antd-icon-setter-list-item:hover .lc-antd-icon-setter-list-item-name {
+.lc-antd-icon-setter-list-item:hover .lc-antd-icon-setter-list-item-name {
   display: block;
 }
 

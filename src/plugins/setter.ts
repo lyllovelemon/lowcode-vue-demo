@@ -3,13 +3,14 @@ import AliLowCodeEngineExt from '@alilc/lowcode-engine-ext';
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 import { project } from '@alilc/lowcode-engine';
 import CustomSetterCom from '../components/setter/customSetter';
-
+import AntdIconSetter from '../components/iconSetter';
 const setterRegistry = (ctx: IPublicModelPluginContext) => {
   const { setterMap, pluginMap } = AliLowCodeEngineExt;
   return {
     name: 'ext-setters-registry',
     async init() {
       const { setters, skeleton } = ctx;
+      setters.registerSetter('AntdIconSetter', AntdIconSetter);
       setters.registerSetter('AltStringSetter', CustomSetterCom);
       setters.registerSetter({ ...setterMap, ExpressionSetter } as any);
       // 注册插件

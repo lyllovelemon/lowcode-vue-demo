@@ -1,6 +1,8 @@
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 import ComponentsPane from '@alilc/lowcode-plugin-components-pane';
-import { Logo } from '../components/logo/logo';
+import { Logo } from '@/components/logo/logo';
+// @ts-ignore
+import MultiPagePlugin from './multi-page-plugin/index.tsx'
 
 const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
   return {
@@ -37,6 +39,18 @@ const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
       componentsPane.disable();
       project.onSimulatorRendererReady(() => {
         componentsPane.enable();
+      });
+
+      skeleton.add({
+        area: 'leftArea',//插件区域
+        type: 'PanelDock',// 插件类型，弹出面板
+        name: 'multiPagePane',
+        content: MultiPagePlugin,// 插件组件实例
+        props: {
+          align: 'top',
+          icon: 'kaiwenjianjia',
+          description: '多页插件',
+        },
       });
     },
   };

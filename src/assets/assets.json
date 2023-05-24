@@ -1,9 +1,9 @@
 {
-  "version": "0.0.9",
+  "version": "0.1.0",
   "packages": [
     {
       "package": "lowcode-material-ant-vue",
-      "version": "0.0.9",
+      "version": "0.1.0",
       "library": "LowcodeMaterialAntVue",
       "urls": ["/material/index.css", "/material/index.js"]
     },
