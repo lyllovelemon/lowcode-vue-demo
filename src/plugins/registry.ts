@@ -2,7 +2,9 @@ import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 import ComponentsPane from '@alilc/lowcode-plugin-components-pane';
 import { Logo } from '@/components/logo/logo';
 // @ts-ignore
-import MultiPagePlugin from './multi-page-plugin/index.tsx'
+import LogoImg from '@/components/logo/lowcode-logo.svg'
+// @ts-ignore
+import MultiPagePlugin from '@/plugins/multi-page-plugin/index.tsx'
 
 const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
   return {
@@ -16,7 +18,8 @@ const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
         name: 'logo',
         content: Logo,
         contentProps: {
-          logo: 'https://img.alicdn.com/imgextra/i4/O1CN013w2bmQ25WAIha4Hx9_!!6000000007533-55-tps-137-26.svg',
+          logo:LogoImg,
+          // logo: 'https://img.alicdn.com/imgextra/i4/O1CN013w2bmQ25WAIha4Hx9_!!6000000007533-55-tps-137-26.svg',
           href: 'https://lowcode-engine.cn',
         },
         props: {
