@@ -1,0 +1,56 @@
+{
+  "componentName": "Page",
+  "id": "node_dockcviv8fo1",
+  "props": {
+    "style": {
+      "height": "100%",
+      "padding": "0",
+      "backgroundColor": "#fff",
+      "paddingTop": "10px"
+    }
+  },
+  "docId": "doclhk9ucvr",
+  "fileName": "/",
+  "state": {
+    "matchFields": {},
+    "page": {
+      "pageNumber": 1,
+      "pageSize": 10
+    },
+    "sort": {
+      "key": "id",
+      "sortType": "ASC"
+    }
+  },
+  "dataSource": {
+    "list": []
+  },
+  "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
+  "lifeCycles": {
+    "initModule": {
+      "type": "JSExpression",
+      "value": "(() => {const $id = \"node_dockcviv8fo1\"; return ($cached, $scope = window) => {\n  if ($id in $cached) return $cached[$id];\n  const exports = $cached[$id] = {};\n  const {defineComponent,toRaw} = $scope[\"Vue\"];\nconst {default: axios} = $scope[\"axios\"];\n  exports.defineComponent = defineComponent;\n  exports.toRaw = toRaw;\n  exports.axios = axios;\n  return exports;\n}})()"
+    },
+    "initProps": {
+      "type": "JSExpression",
+      "value": "{\n    style: {\n      type: Object,\n      default: {}\n    },\n  }"
+    },
+    "mounted": {
+      "type": "JSFunction",
+      "value": "function () {\n    console.log('mounted')\n  }"
+    },
+    "beforeMount": {
+      "type": "JSFunction",
+      "value": "function () {\n    console.log('will unmount');\n  }"
+    }
+  },
+  "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
+  "hidden": false,
+  "title": "",
+  "isLocked": false,
+  "condition": true,
+  "conditionGroup": "",
+  "meta": {
+    "originCode": "import { defineComponent,toRaw } from 'vue';\nimport axios from \"axios\";\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    matchFields:{},\n    page:{\n      pageNumber:1,\n      pageSize:10\n    },\n    sort:{\n      key:\"id\",\n      sortType:\"ASC\"\n    },\n  }),\n  methods: {\n   \n  },\n  mounted() {\n    console.log('mounted')\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
+  }
+}
