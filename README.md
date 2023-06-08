@@ -5,8 +5,8 @@ Lowcode Engine Vue demo，[在线演示](https://knxcloud.github.io/lowcode-engi
 ## 运行演示
 
 ```bash
-git clone git@github.com:KNXCloud/lowcode-engine-demo.git
-cd lowcode-engine-demo
+git clone https://github.com/lyllovelemon/lowcode-vue-demo.git
+cd lowcode-vue-demo
 pnpm install
 pnpm start
 ```
