@@ -18,7 +18,7 @@ pnpm start
 - `this.props.xxx` -> `this.xxx`
 - `this.state.xxx` -> `this.xxx`
 
-现阶段 vue 代码编辑器还未适配，可以直接使用 react 代码编辑器编辑代码
+现阶段 vue 代码编辑器已支持
 
 - state 内容会自动转化为 vue data
 - lifecycle 自动适配为 vue lifecycle
