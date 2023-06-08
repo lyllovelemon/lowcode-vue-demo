@@ -1,6 +1,6 @@
 # lowcode-engine-demo
 
-Lowcode Engine Vue demo，[在线演示](https://knxcloud.github.io/lowcode-engine-demo/)
+Lowcode Engine Vue demo
 
 ## 运行演示
 
