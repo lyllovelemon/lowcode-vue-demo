@@ -11,9 +11,17 @@
       "package": "axios",
       "version": "1.4.0",
       "urls": [
-        "https://unpkg.com/axios@1.4.0/dist/axios.min.js"
+        "/package_assets/axios.min.js"
       ],
       "library": "axios"
+    },
+    {
+      "package": "dayjs",
+      "version": "1.8.21",
+      "urls": [
+        "/package_assets/dayjs.min.js"
+      ],
+      "library": "dayjs"
     }
   ],
   "components": [
@@ -35,6 +43,12 @@
       "npm": {
         "package": "axios"
       }
+    },{
+      "name": "dayjs",
+      "npm": {
+        "package": "dayjs"
+      }
     }
+
   ]
 }

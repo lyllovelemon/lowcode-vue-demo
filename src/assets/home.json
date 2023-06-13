@@ -68,7 +68,7 @@
       }
     ]
   },
-  "css": "body {\n font-size: 12px;\n}\n/* 选择器 */\n.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector{\n height: 100%;\n background: #ddf4ff;\n border: 1px solid #ddf4ff;\n}\n.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{\n line-height: 22px;\n color: #5597F9;\n font-size: 12px;\n}\n/* 主按钮 */\n.ant-btn-primary{\n background: #5597F9;\n border-color: #5597F9;\n}\n/* 表格 */\n.ant-table table{\n font-size: 12px;\n}\n.ant-table-small .ant-table-thead > tr > th{\n background-color: #ecf2fb;\n color: #707070;\n height: 24px;\n}\n.ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover{\n background-color: #f7d991;\n}\n.ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before{\n background-color: transparent;\n}\ntr:nth-of-type(even),.ant-table-small .ant-table-selection-column:nth-of-type(even){\n background-color: #f8f8f8;\n}\n.ant-table.ant-table-small .ant-table-title, .ant-table.ant-table-small .ant-table-footer, .ant-table.ant-table-small .ant-table-thead > tr > th, .ant-table.ant-table-small .ant-table-tbody > tr > td, .ant-table.ant-table-small tfoot > tr > th, .ant-table.ant-table-small tfoot > tr > td{\n padding: 0;\n}\n.ant-table-thead>tr>th{\n border-bottom: 1px solid #fff;\n border-right: 1px solid #fff;\n background-color: #fff;\n}\n/* 输入框 */\n.ant-input-affix-wrapper > input.ant-input{\n background: #ddf4ff;\n font-size: 12px;\n color: rgba(0,0,0,.85);\n line-height: 22px;\n}\n/* 区间选择 */\n.ant-picker-input > input{\n  font-size: 12px;\n   color: #5597f9;\n}\n.ant-picker-range-separator{\n   color: #5597f9;\n   font-size: 12px;\n}",
+  "css": "body {\n font-size: 12px;\n}\n/* 选择器 */\n.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector{\n height: 100%;\n background: #ddf4ff;\n border: 1px solid #ddf4ff;\n}\n.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder{\n line-height: 22px;\n color: #5597F9;\n font-size: 12px;\n}\n/* 主按钮 */\n.ant-btn-primary{\n background: #5597F9;\n border-color: #5597F9;\n}\n/* 表格 */\n.ant-table table{\n font-size: 12px;\n}\n.ant-table-small .ant-table-thead > tr > th{\n background-color: #ecf2fb;\n color: #707070;\n height: 24px;\n}\n.ant-table-tbody > tr.ant-table-row:hover > td, .ant-table-tbody > tr > td.ant-table-cell-row-hover{\n background-color: #f7d991;\n}\n.ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before{\n background-color: transparent;\n}\ntr:nth-of-type(even),.ant-table-small .ant-table-selection-column:nth-of-type(even){\n background-color: #f8f8f8;\n}\n.ant-table.ant-table-small .ant-table-title, .ant-table.ant-table-small .ant-table-footer, .ant-table.ant-table-small .ant-table-thead > tr > th, .ant-table.ant-table-small .ant-table-tbody > tr > td, .ant-table.ant-table-small tfoot > tr > th, .ant-table.ant-table-small tfoot > tr > td{\n padding: 0;\n}\n.ant-table-thead>tr>th{\n border-bottom: 1px solid #fff;\n border-right: 1px solid #fff;\n background-color: #fff;\n}\n/* 输入框 */\n.ant-input-affix-wrapper > input.ant-input{\n background: #ddf4ff;\n font-size: 12px;\n color: rgba(0,0,0,.85);\n line-height: 22px;\n}\n/* 区间选择 */\n.ant-picker-input > input{\n  font-size: 12px;\n   color: #5597f9;\n}\n.ant-picker-range-separator{\n   color: #5597f9;\n   font-size: 12px;\n}\n/**提示图标**/\n.ant-alert-with-description .ant-alert-icon{\n   font-size: 13px;\n}\n.ant-alert-description{\n   font-size: 12px;\n}\n.ant-alert-close-icon{\n   padding: 5px 5px 5px 0;\n}\n/* 文本框 */\n.ant-input-textarea-show-count > .ant-input{\n   background-color: #ddf4ff;\n   border: 1px solid #ddf4ff;\n}",
   "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
   "hidden": false,
   "title": "",
@@ -76,7 +76,7 @@
   "condition": true,
   "conditionGroup": "",
   "meta": {
-    "originCode": "import { defineComponent,toRaw } from 'vue';\nconst onValidateRoleName=(rule, value)=>{\n  if (!value) {\n    return Promise.reject('请输入角色名称');\n  }\n  if (value.length > 5) {\n    return Promise.reject('最多输入5位');\n  }\n  return Promise.resolve();\n}\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    text:\"outer\",\n    isShowDialog:false,\n    showAdd:false,\n    showDetail:false,\n    matchFields:{},\n    loading:false,\n    roleMap:{\n      \"1\":\"运营\",\n      \"2\":\"运维\",\n      \"3\":\"运营，运维\"\n    },\n    page:{\n      pageNumber:1,\n      pageSize:10\n    },\n    sort:{\n      key:\"id\",\n      sortType:\"ASC\"\n    },\n    list:[],\n    options:[],\n    selection:[],\n    form:{\n      roleName:'',\n      roleType:''\n    },\n    rules:{\n      roleName: [{ required: true, message: '', trigger: 'onBlur' },{ validator: onValidateRoleName,trigger:'onBlur'}],\n      roleType:[{required:true,message:'请选择角色类型',trigger:'onChange'}]\n    },\n    currentRow:{},\n    delDisabled:true,\n    delBtnClicked:false,\n    idArr:[],\n    formLoading:false\n  }),\n  methods: {\n    onAddSure(e){\n      console.log('确定新增',e.target.value);\n    },\n    onAddReset(){\n      this.$refs['form_7xo2'].resetFields();\n    },\n    onRole(row){\n      console.log('onRow',row);\n      return `row.id`;\n    },\n    onDetail(e,row){   \n      this.showDetail = true;\n      this.currentRow = toRaw(row.data);\n      // console.log('详情', this.currentRow);\n    },\n    onCloseDetail(){\n      this.showDetail = false;\n    },\n    onAdd(){\n      this.showAdd = true;\n      console.log('点击新增后--->',this.showAdd);\n      console.log('新增表单实例', this.$refs['form_7xo2']);\n    },\n    onCloseAdd(){\n      this.showAdd = false;\n    },\n    onRemove(id){\n     this.delBtnClicked = true;\n     if(!this.selection.length){\n        return;\n     }\n      this.idArr = this.selection.map(item=>item.id);\n      console.log('要删除的id', this.idArr);\n    },\n    onRoleChange(e){\n      this.matchFields.roleName = e.target.value;\n      console.log('角色名称change', e.target.value);\n    },\n    onSearch(){\n      console.log('查询',this.matchFields);\n      this.getRoleList();\n    },\n    onReset(){\n      this.delBtnClicked = false;\n      this.selection={};\n      this.matchFields={};\n      this.page={\n        pageNumber:1,\n        pageSize:10\n      };\n      window.LowcodeMaterialAntVue.message.info({\n        content:'哈哈哈'\n      })\n      console.log('重置', window.LowcodeMaterialAntVue.message);\n    },\n    onConfirm(e){\n      console.log('idArr',this.idArr,'selection',this.selection);\n      if(!this.idArr.length){\n        return;\n      }\n      this.dataSourceMap.deleteRole.load({ id: this.idArr }).then(res=>{\n        console.log('删除res',res);\n        window.LowcodeMaterialAntVue.message.success(\"删除成功\");\n      }).catch(err=>{\n        console.log('删除失败',err);\n        window.LowcodeMaterialAntVue.message.error(\"删除失败\");\n      }).finally(()=>{\n        this.delBtnClicked = false;\n      }) \n    },\n    getRoleList(){\n      this.loading = true;\n      let params={}\n      this.dataSourceMap.list.load({matchFields:toRaw(this.matchFields),page:toRaw(this.page)}).then(res => {\n        this.loading = false;\n        this.list = res.body.list || [];\n        console.log('角色列表数据', this.list);\n\n      }).catch(err => {\n        this.loading = false;\n        console.log('err', err);\n      })\n    },\n    handleDeselect(val){\n      const findIndex=this.selection.findIndex(item=>{\n        return item.id=== val.id\n      })\n      if(~findIndex){\n        this.selection.splice(findIndex,1);\n      }\n    },\n    onSelectAll(checked,val){\n      this.selection = val;\n      this.delDisabled = !this.selection.length;\n      console.log(\"全选\",val,checked);\n    },\n    handleSelectionChange(val,checked){\n      console.log('选中改变',val,checked);\n      if(checked && !this.selection.includes(val)){\n        this.selection.push(val);\n      }\n      if(!checked){\n        this.handleDeselect(val);\n      }\n      this.delDisabled = !this.selection.length;\n      console.log('最后选中',this.selection);\n    },\n    onRoleNameChange(e){\n      const val = e.target.value;\n      this.form.roleName = val;\n      console.log('角色名',val,typeof val);\n    },\n    onRoleTypeChange(val){\n      this.form.roleType = val||'';\n      console.log('角色选择完',val);\n    },\n    onResetForm(e){\n      console.log('重置表单--->',e);\n    },\n    onFinish(val){\n      this.formLoading = true;\n      console.log('onFinish表单校验成功',val);\n      this.dataSourceMap.addRole.load({data:this.form}).then(res=>{\n        console.log('新增角色成功',res);\n        this.formLoading = false;\n        window.LowcodeMaterialAntVue.message.success(\"新增角色成功\");\n      }).catch(err=>{\n        console.log('新增角色失败',err);\n        this.formLoading = false;\n        window.LowcodeMaterialAntVue.message.error(\"新增角色失败\");\n      }).finally(()=>{\n        this.showAdd = false;\n      })\n    },\n    onFinishFailed(val,field){\n      console.log('onFinishFailed表单校验失败',val,field);\n    },\n    onFormValidate(name,status,errorMsg){\n      console.log('任一表单项被校验后触发',name,status,errorMsg);\n    },\n    onSubmit(e){\n      console.log('新增弹窗submit', e.target.value, '表单', this.$refs['form_7xo2']);\n      this.$refs['form_7xo2'].validate((valid)=>{\n        console.log('校验是否通过',valid);\n      })\n    },\n  },\n  mounted() {\n    this.getRoleList();\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
+    "originCode": "import { defineComponent,toRaw } from 'vue';\nconst onValidateRoleName=(rule, value)=>{\n  if (!value) {\n    return Promise.reject('请输入角色名称');\n  }\n  if (value.length > 5) {\n    return Promise.reject('最多输入5位');\n  }\n  return Promise.resolve();\n}\nexport default defineComponent({\n  props: {\n    style: {\n      type: Object,\n      default: {}\n    },\n  },\n  data: () => ({\n    text:\"outer\",\n    isShowDialog:false,\n    showAdd:false,\n    showDetail:false,\n    matchFields:{},\n    loading:false,\n    roleMap:{\n      \"1\":\"运营\",\n      \"2\":\"运维\",\n      \"3\":\"运营，运维\"\n    },\n    page:{\n      pageNumber:1,\n      pageSize:10\n    },\n    sort:{\n      key:\"id\",\n      sortType:\"ASC\"\n    },\n    list: [{\n      \"id\": \"1\",\n      \"name\": \"毛不易\",\n      \"age\": 32,\n      \"address\": \"西湖区湖底公园1号\"\n    }, {\n      \"id\": \"2\",\n      \"name\": \"邓紫棋\",\n      \"age\": 28,\n      \"address\": \"滨江区网商路699号\"\n    }],\n    options:[],\n    selection:[],\n    form:{\n      roleName:'',\n      roleType:''\n    },\n    rules:{\n      roleName: [{ required: true, message: '', trigger: 'onBlur' },{ validator: onValidateRoleName,trigger:'onBlur'}],\n      roleType:[{required:true,message:'请选择角色类型',trigger:'onChange'}]\n    },\n    currentRow:{},\n    delDisabled:true,\n    delBtnClicked:false,\n    idArr:[],\n    formLoading:false\n  }),\n  methods: {\n    showTotal(){\n      return `共 ${this.list.length} 条`\n    },\n    onOpenChange(val){\n      console.log('openChange',val)\n    },\n    onPanelChange(val){\n      console.log('panelChange',val)\n    }\n  \n  },\n  mounted() {\n  \n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
   },
   "state": {
     "text": "outer",
@@ -98,7 +98,20 @@
       "key": "id",
       "sortType": "ASC"
     },
-    "list": [],
+    "list": [
+      {
+        "id": "1",
+        "name": "毛不易",
+        "age": 32,
+        "address": "西湖区湖底公园1号"
+      },
+      {
+        "id": "2",
+        "name": "邓紫棋",
+        "age": 28,
+        "address": "滨江区网商路699号"
+      }
+    ],
     "options": [],
     "selection": [],
     "form": {
@@ -135,97 +148,285 @@
     "formLoading": false
   },
   "methods": {
-    "onAddSure": {
+    "showTotal": {
       "type": "JSFunction",
-      "value": "function (e){\n      console.log('确定新增',e.target.value);\n    }"
+      "value": "function (){\n      return `共 ${this.list.length} 条`\n    }"
     },
-    "onAddReset": {
+    "onOpenChange": {
       "type": "JSFunction",
-      "value": "function (){\n      this.$refs['form_7xo2'].resetFields();\n    }"
+      "value": "function (val){\n      console.log('openChange',val)\n    }"
     },
-    "onRole": {
+    "onPanelChange": {
       "type": "JSFunction",
-      "value": "function (row){\n      console.log('onRow',row);\n      return `row.id`;\n    }"
-    },
-    "onDetail": {
-      "type": "JSFunction",
-      "value": "function (e,row){   \n      this.showDetail = true;\n      this.currentRow = toRaw(row.data);\n      // console.log('详情', this.currentRow);\n    }"
-    },
-    "onCloseDetail": {
-      "type": "JSFunction",
-      "value": "function (){\n      this.showDetail = false;\n    }"
-    },
-    "onAdd": {
-      "type": "JSFunction",
-      "value": "function (){\n      this.showAdd = true;\n      console.log('点击新增后--->',this.showAdd);\n      console.log('新增表单实例', this.$refs['form_7xo2']);\n    }"
-    },
-    "onCloseAdd": {
-      "type": "JSFunction",
-      "value": "function (){\n      this.showAdd = false;\n    }"
-    },
-    "onRemove": {
-      "type": "JSFunction",
-      "value": "function (id){\n     this.delBtnClicked = true;\n     if(!this.selection.length){\n        return;\n     }\n      this.idArr = this.selection.map(item=>item.id);\n      console.log('要删除的id', this.idArr);\n    }"
-    },
-    "onRoleChange": {
-      "type": "JSFunction",
-      "value": "function (e){\n      this.matchFields.roleName = e.target.value;\n      console.log('角色名称change', e.target.value);\n    }"
-    },
-    "onSearch": {
-      "type": "JSFunction",
-      "value": "function (){\n      console.log('查询',this.matchFields);\n      this.getRoleList();\n    }"
-    },
-    "onReset": {
-      "type": "JSFunction",
-      "value": "function (){\n      this.delBtnClicked = false;\n      this.selection={};\n      this.matchFields={};\n      this.page={\n        pageNumber:1,\n        pageSize:10\n      };\n      window.LowcodeMaterialAntVue.message.info({\n        content:'哈哈哈'\n      })\n      console.log('重置', window.LowcodeMaterialAntVue.message);\n    }"
-    },
-    "onConfirm": {
-      "type": "JSFunction",
-      "value": "function (e){\n      console.log('idArr',this.idArr,'selection',this.selection);\n      if(!this.idArr.length){\n        return;\n      }\n      this.dataSourceMap.deleteRole.load({ id: this.idArr }).then(res=>{\n        console.log('删除res',res);\n        window.LowcodeMaterialAntVue.message.success(\"删除成功\");\n      }).catch(err=>{\n        console.log('删除失败',err);\n        window.LowcodeMaterialAntVue.message.error(\"删除失败\");\n      }).finally(()=>{\n        this.delBtnClicked = false;\n      }) \n    }"
-    },
-    "getRoleList": {
-      "type": "JSFunction",
-      "value": "function (){\n      this.loading = true;\n      let params={}\n      this.dataSourceMap.list.load({matchFields:toRaw(this.matchFields),page:toRaw(this.page)}).then(res => {\n        this.loading = false;\n        this.list = res.body.list || [];\n        console.log('角色列表数据', this.list);\n\n      }).catch(err => {\n        this.loading = false;\n        console.log('err', err);\n      })\n    }"
-    },
-    "handleDeselect": {
-      "type": "JSFunction",
-      "value": "function (val){\n      const findIndex=this.selection.findIndex(item=>{\n        return item.id=== val.id\n      })\n      if(~findIndex){\n        this.selection.splice(findIndex,1);\n      }\n    }"
-    },
-    "onSelectAll": {
-      "type": "JSFunction",
-      "value": "function (checked,val){\n      this.selection = val;\n      this.delDisabled = !this.selection.length;\n      console.log(\"全选\",val,checked);\n    }"
-    },
-    "handleSelectionChange": {
-      "type": "JSFunction",
-      "value": "function (val,checked){\n      console.log('选中改变',val,checked);\n      if(checked && !this.selection.includes(val)){\n        this.selection.push(val);\n      }\n      if(!checked){\n        this.handleDeselect(val);\n      }\n      this.delDisabled = !this.selection.length;\n      console.log('最后选中',this.selection);\n    }"
-    },
-    "onRoleNameChange": {
-      "type": "JSFunction",
-      "value": "function (e){\n      const val = e.target.value;\n      this.form.roleName = val;\n      console.log('角色名',val,typeof val);\n    }"
-    },
-    "onRoleTypeChange": {
-      "type": "JSFunction",
-      "value": "function (val){\n      this.form.roleType = val||'';\n      console.log('角色选择完',val);\n    }"
-    },
-    "onResetForm": {
-      "type": "JSFunction",
-      "value": "function (e){\n      console.log('重置表单--->',e);\n    }"
-    },
-    "onFinish": {
-      "type": "JSFunction",
-      "value": "function (val){\n      this.formLoading = true;\n      console.log('onFinish表单校验成功',val);\n      this.dataSourceMap.addRole.load({data:this.form}).then(res=>{\n        console.log('新增角色成功',res);\n        this.formLoading = false;\n        window.LowcodeMaterialAntVue.message.success(\"新增角色成功\");\n      }).catch(err=>{\n        console.log('新增角色失败',err);\n        this.formLoading = false;\n        window.LowcodeMaterialAntVue.message.error(\"新增角色失败\");\n      }).finally(()=>{\n        this.showAdd = false;\n      })\n    }"
-    },
-    "onFinishFailed": {
-      "type": "JSFunction",
-      "value": "function (val,field){\n      console.log('onFinishFailed表单校验失败',val,field);\n    }"
-    },
-    "onFormValidate": {
-      "type": "JSFunction",
-      "value": "function (name,status,errorMsg){\n      console.log('任一表单项被校验后触发',name,status,errorMsg);\n    }"
-    },
-    "onSubmit": {
-      "type": "JSFunction",
-      "value": "function (e){\n      console.log('新增弹窗submit', e.target.value, '表单', this.$refs['form_7xo2']);\n      this.$refs['form_7xo2'].validate((valid)=>{\n        console.log('校验是否通过',valid);\n      })\n    }"
+      "value": "function (val){\n      console.log('panelChange',val)\n    }"
     }
-  }
+  },
+  "lifeCycles": {
+    "initModule": {
+      "type": "JSExpression",
+      "value": "(() => {const $id = \"node_dockcviv8fo1\"; return ($cached, $scope = window) => {\n  if ($id in $cached) return $cached[$id];\n  const exports = $cached[$id] = {};\n  const {defineComponent,toRaw} = $scope[\"Vue\"];\n  const onValidateRoleName=(rule, value)=>{\n    if (!value) {\n      return Promise.reject('请输入角色名称');\n    }\n    if (value.length > 5) {\n      return Promise.reject('最多输入5位');\n    }\n    return Promise.resolve();\n  }\n  exports.defineComponent = defineComponent;\n  exports.toRaw = toRaw;\n  exports.onValidateRoleName = onValidateRoleName;\n  return exports;\n}})()"
+    },
+    "initProps": {
+      "type": "JSExpression",
+      "value": "{\n    style: {\n      type: Object,\n      default: {}\n    },\n  }"
+    },
+    "mounted": {
+      "type": "JSFunction",
+      "value": "function () {\n  \n  }"
+    },
+    "beforeMount": {
+      "type": "JSFunction",
+      "value": "function () {\n    console.log('will unmount');\n  }"
+    }
+  },
+  "children": [
+    {
+      "componentName": "AAlert",
+      "id": "node_oclimtv8ri6",
+      "props": {
+        "message": "",
+        "description": "This is a warning notice about copywriting.",
+        "type": "warning",
+        "showIcon": true,
+        "banner": false,
+        "closable": true,
+        "icon": {
+          "type": "JSSlot",
+          "value": [
+            {
+              "componentName": "AIcon",
+              "id": "node_oclimtv8rib",
+              "props": {
+                "type": "InfoCircleFilled",
+                "size": 12,
+                "class": "info-icon",
+                "color": "#f7ba2b",
+                "rotate": 0,
+                "spin": false
+              },
+              "docId": "doclimtv8ri",
+              "hidden": false,
+              "title": "",
+              "isLocked": false,
+              "condition": true,
+              "conditionGroup": ""
+            }
+          ],
+          "id": "node_oclimtv8ria"
+        },
+        "style": {
+          "backgroundColor": "#fef8e9",
+          "color": "#707070",
+          "height": "24px",
+          "padding": "0 4px",
+          "boxSizing": "border-box"
+        },
+        "_unsafe_MixedSetter_closeText_select": "SlotSetter"
+      },
+      "docId": "doclimtv8ri",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "AModal",
+      "id": "node_oclimtv8ri1",
+      "props": {
+        "style": {
+          "width": "650px"
+        },
+        "title": "Basic Modal",
+        "okText": "确认",
+        "cancelText": "取消",
+        "destroyOnClose": true,
+        "getContainer": {
+          "type": "JSExpression",
+          "value": "() => document.querySelector('#lce-container')"
+        },
+        "v-model:visible": false,
+        "centered": false,
+        "closable": true,
+        "confirmLoading": false,
+        "forceRender": false,
+        "keyboard": true,
+        "mask": true,
+        "maskClosable": true,
+        "bodyStyle": {},
+        "maskStyle": {},
+        "dialogStyle": {}
+      },
+      "docId": "doclimtv8ri",
+      "hidden": true,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "ATable",
+      "id": "node_oclimtqkl01",
+      "props": {
+        "style": {
+          "backgroundColor": "#fff",
+          "marginTop": "4px",
+          "minHeight": "240px",
+          "color": "#000"
+        },
+        "showHeader": true,
+        "size": "small",
+        "dataSource": {
+          "type": "JSExpression",
+          "value": "this.list",
+          "mock": [
+            {
+              "id": "1",
+              "name": "毛不易",
+              "age": 32,
+              "address": "西湖区湖底公园1号"
+            },
+            {
+              "id": "2",
+              "name": "邓紫棋",
+              "age": 28,
+              "address": "滨江区网商路699号"
+            }
+          ]
+        },
+        "columns": [
+          {
+            "title": "序号",
+            "dataIndex": "index",
+            "align": "center",
+            "fixed": "",
+            "ellipsis": false,
+            "filterSearch": false,
+            "filterMultiple": true,
+            "customRender": {
+              "type": "JSSlot",
+              "params": [
+                "data"
+              ],
+              "value": [
+                {
+                  "componentName": "ATypographyText",
+                  "id": "node_oclimtqkl07",
+                  "props": {
+                    "children": {
+                      "type": "JSExpression",
+                      "value": "this.data.index+1",
+                      "mock": "text"
+                    },
+                    "code": false,
+                    "delete": false,
+                    "underline": false,
+                    "strong": false,
+                    "style": {
+                      "color": "#000"
+                    }
+                  },
+                  "docId": "doclimtqkl0",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_oclimtqkl06"
+            },
+            "width": 60
+          },
+          {
+            "title": "姓名",
+            "dataIndex": "name",
+            "key": "name",
+            "align": "center"
+          },
+          {
+            "title": "年龄",
+            "dataIndex": "age",
+            "key": "age",
+            "align": "center"
+          },
+          {
+            "title": "地址",
+            "dataIndex": "address",
+            "key": "address",
+            "align": "center"
+          },
+          {
+            "title": "操作",
+            "fixed": "right",
+            "align": "center",
+            "filterSearch": false,
+            "filterMultiple": true,
+            "customRender": {
+              "type": "JSSlot",
+              "params": [
+                "data"
+              ],
+              "value": [
+                {
+                  "componentName": "AButton",
+                  "id": "node_oclimtqkl09",
+                  "props": {
+                    "type": "link",
+                    "children": "详情",
+                    "htmlType": "button",
+                    "size": "small",
+                    "shape": "default",
+                    "block": false,
+                    "ghost": false,
+                    "danger": false,
+                    "style": {
+                      "fontSize": "12px"
+                    }
+                  },
+                  "docId": "doclimtqkl0",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_oclimtqkl08"
+            },
+            "class": "operation-list"
+          }
+        ],
+        "rowKey": "id",
+        "pagination": {
+          "pageSizeOptions": [
+            10,
+            20,
+            50,
+            100
+          ],
+          "showSizeChanger": true,
+          "showQuickJumper": true,
+          "simple": false,
+          "size": "default",
+          "showTotal": {
+            "type": "JSFunction",
+            "value": "function(){ return this.showTotal.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+          }
+        },
+        "loading": false,
+        "tableLayout": "",
+        "scroll": {
+          "scrollToFirstRowOnChange": true
+        },
+        "emptyText": "暂无数据"
+      },
+      "docId": "doclimtqkl0",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    }
+  ]
 }
