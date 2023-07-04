@@ -22,6 +22,14 @@
         "/package_assets/dayjs.min.js"
       ],
       "library": "dayjs"
+    },
+    {
+      "package": "crypto-js",
+      "version": "4.1.1",
+      "urls": [
+        "/package_assets/crypto-js.min.js"
+      ],
+      "library": "crypto-js"
     }
   ],
   "components": [
@@ -43,10 +51,17 @@
       "npm": {
         "package": "axios"
       }
-    },{
+    },
+    {
       "name": "dayjs",
       "npm": {
         "package": "dayjs"
+      }
+    },
+    {
+      "name": "crypto-js",
+      "npm": {
+        "package": "crypto-js"
       }
     }
 

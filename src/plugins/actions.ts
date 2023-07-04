@@ -1,16 +1,24 @@
 import { createElement as h } from 'react';
 import { Button, Message } from '@alifd/next';
-import { saveSchema } from '@/utils/store';
+import { getProjectRouterSchemaByKey, saveSchema, traverseRouteName } from '@/utils/store';
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
+import { config } from '@alilc/lowcode-engine';
+import {CURRENT_PAGE,DEFAULT_PAGE_KEY} from '@/utils/const';
+// @ts-ignore
+import { updateSchema} from '@/api/schema';
 
 const save = async () => {
   await saveSchema();
-  Message.success('成功保存到本地');
+  const key = config.get(CURRENT_PAGE)||DEFAULT_PAGE_KEY;
+  const schemaKey = traverseRouteName(key);
+  const projectRouterSchema = getProjectRouterSchemaByKey(key);
+  await updateSchema(schemaKey,projectRouterSchema);
 };
 
 const preview = async () => {
   await saveSchema();
-  window.open('preview.html');
+  const key = config.get(CURRENT_PAGE)||DEFAULT_PAGE_KEY;
+  window.open('preview.html?page='+key);
 };
 
 const savePlugin = (ctx: IPublicModelPluginContext) => {

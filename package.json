@@ -1,10 +1,13 @@
 {
   "scripts": {
-    "start": "build-scripts start --disable-reload --port 5557",
-    "build": "build-scripts build"
+    "start": "concurrently \"npm:dev\" \"npm:node\"",
+    "dev": "build-scripts start --disable-reload --port 5557",
+    "build": "build-scripts build",
+    "node": "nodemon ./src/service/router.js"
   },
   "dependencies": {
     "@alifd/next": "1.21.14",
+    "@alilc/lowcode-plugin-block": "^1.0.0-beta.0",
     "@alilc/lowcode-plugin-components-pane": "^1.0.7",
     "@alilc/lowcode-plugin-datasource-pane": "^1.0.10",
     "@alilc/lowcode-plugin-inject": "^1.2.2",
@@ -16,6 +19,11 @@
     "@knxcloud/lowcode-vue-renderer": "^1.6.0-beta.7",
     "@knxcloud/lowcode-vue-simulator-renderer": "^1.6.0-beta.7",
     "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "express": "^4.18.2",
     "lodash": "^4.17.21",
     "module": "^1.2.5",
     "vue-router": "^4.1.6"

@@ -1,0 +1,13 @@
+{
+  "projectRouter": [
+    {
+      "isShow": 1,
+      "meta": [],
+      "title": "路由1",
+      "path": "home_copy",
+      "name": "home_copy",
+      "children": [],
+      "isFromLowcode": true
+    }
+  ]
+}

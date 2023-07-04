@@ -4,10 +4,11 @@ import { Logo } from '@/components/logo/logo';
 // @ts-ignore
 import LogoImg from '@/components/logo/lowcode-logo.svg'
 // @ts-ignore
-import MultiPagePlugin from '@/plugins/multi-page-plugin/index.tsx'
 import SaveAsBlock from '@/actions/block';
+ import {PagesPane} from '@/components/pages';
 
-const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
+
+const builtinPluginRegistry =  (ctx: IPublicModelPluginContext) => {
   return {
     name: 'builtin-plugin-registry',
     async init() {
@@ -52,13 +53,14 @@ const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
         area: 'leftArea',//插件区域
         type: 'PanelDock',// 插件类型，弹出面板
         name: 'multiPagePane',
-        content: MultiPagePlugin,// 插件组件实例
+        content: PagesPane,// 插件组件实例
         props: {
           align: 'top',
           icon: 'kaiwenjianjia',
           description: '多页插件',
         },
       });
+
     },
   };
 };
