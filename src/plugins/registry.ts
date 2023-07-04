@@ -5,12 +5,16 @@ import { Logo } from '@/components/logo/logo';
 import LogoImg from '@/components/logo/lowcode-logo.svg'
 // @ts-ignore
 import MultiPagePlugin from '@/plugins/multi-page-plugin/index.tsx'
+import SaveAsBlock from '@/actions/block';
 
 const builtinPluginRegistry = (ctx: IPublicModelPluginContext) => {
   return {
     name: 'builtin-plugin-registry',
     async init() {
-      const { skeleton, project } = ctx;
+      const { skeleton, project,material } = ctx;
+
+      // 注册保存为区块工作条
+      material.addBuiltinComponentAction(SaveAsBlock);
       // 注册 logo 面板
       skeleton.add({
         area: 'topArea',
